@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapters — Platform · Connect · Investors</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   SHARED DESIGN SYSTEM
+═══════════════════════════════════════════ */
+:root {
+  --page:    #fdfaf4; --page2:   #f4ede0;
+  --page3:   #e8dcc8; --page4:   #d8c8ae;
+  --ink:     #1a0f06; --ink2:    #2e1e0c;
+  --ink3:    #4a3420; --ink4:    #7a6248; --ink5: #aa9070;
+  --burg2:   #9e2845; --burg:    #7a1f35;
+  --amb:     #8c5a0a; --amb2:    #b87818; --amb3: #e8a820;
+  --for:     #1e3a20; --for2:    #2e5430; --for3: #4e7a50;
+  --leather: #6b3410; --slate:   #2a3848;
+  --cover:   #110a04; --cover2:  #1a1008;
+  --teal:    #0d5c63; --teal2:   #1a8a94;
+  --indigo:  #2d3a6e; --indigo2: #4a5fa8;
+  --rose:    #8b2252; --pine:    #2a4a2a;
+  --display: 'Lora', Georgia, serif;
+  --body:    'Source Serif 4', Georgia, serif;
+  --mono:    'JetBrains Mono', monospace;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);font-size:16px;line-height:1.75;overflow-x:hidden;background:var(--page)}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--cover)}
+::-webkit-scrollbar-thumb{background:linear-gradient(to bottom,var(--burg2),var(--amb2),var(--for2),var(--teal));border-radius:2px}
+
+/* page switching */
+.page{display:none}
+.page.active{display:block}
+
+/* ── TOP SWITCHER NAV ── */
+.switcher{position:fixed;top:0;left:0;right:0;z-index:500;height:54px;background:rgba(17,10,4,0.99);backdrop-filter:blur(24px);border-bottom:1px solid rgba(140,90,10,0.15);display:flex;align-items:center;justify-content:space-between;padding:0 40px}
+.sw-brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.sw-brand-name{font-family:var(--display);font-size:18px;font-weight:700;color:var(--page);letter-spacing:-0.3px}
+.sw-tabs{display:flex;gap:2px;background:rgba(255,255,255,0.04);border:1px solid rgba(140,90,10,0.15);padding:3px}
+.sw-tab{font-family:var(--mono);font-size:8px;letter-spacing:2px;text-transform:uppercase;padding:7px 18px;cursor:pointer;color:rgba(253,248,240,0.3);border:none;background:transparent;transition:all 0.2s;white-space:nowrap}
+.sw-tab:hover{color:rgba(253,248,240,0.6)}
+.sw-tab.active{background:var(--amb);color:var(--page)}
+.sw-tab.connect.active{background:var(--indigo2)}
+.sw-tab.investor.active{background:var(--for2)}
+.sw-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.sw-badge{font-family:var(--mono);font-size:7.5px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border:1px solid rgba(158,40,69,0.3);color:var(--burg2)}
+#progress{position:fixed;top:54px;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--burg2),var(--amb3),var(--for2),var(--teal2));z-index:400;transition:width 0.08s linear}
+
+/* ── SHARED LAYOUT ── */
+.wrap{max-width:1120px;margin:0 auto;padding:0 64px}
+.wrap-n{max-width:840px;margin:0 auto;padding:0 64px}
+.section{padding:96px 0}
+.bg2{background:var(--page2)}
+.bg-d{background:var(--cover)}
+.bg-d2{background:var(--cover2)}
+.eyebrow{font-family:var(--mono);font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--amb);margin-bottom:14px;display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:'';display:block;width:22px;height:1px;background:var(--amb);flex-shrink:0}
+.bg-d .eyebrow,.bg-d2 .eyebrow{color:var(--amb2)}
+.bg-d .eyebrow::before,.bg-d2 .eyebrow::before{background:var(--amb2)}
+.s-title{font-family:var(--display);font-size:clamp(28px,4vw,50px);font-weight:700;line-height:1.06;letter-spacing:-0.5px;margin-bottom:18px;color:var(--ink)}
+.s-title em{font-style:italic;font-weight:400;color:var(--burg2)}
+.bg-d .s-title,.bg-d2 .s-title{color:var(--page)}
+.bg-d .s-title em,.bg-d2 .s-title em{color:var(--amb3)}
+.s-body{font-size:15.5px;line-height:1.9;color:var(--ink3);max-width:660px}
+.bg-d .s-body,.bg-d2 .s-body{color:rgba(253,248,240,0.58)}
+.h-rule{display:flex;align-items:center;gap:16px;padding:0 64px}
+.h-rule-l{flex:1;height:1px;background:var(--page4)}
+.h-rule-g{font-family:var(--display);font-size:15px;color:var(--page4)}
+.golden{padding:44px 52px;background:rgba(140,90,10,0.05);border:1px solid rgba(140,90,10,0.2);position:relative;overflow:hidden}
+.golden::before{content:'✦';position:absolute;right:36px;top:50%;transform:translateY(-50%);font-size:100px;color:var(--amb);opacity:0.07}
+.golden-l{font-family:var(--mono);font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--amb);margin-bottom:10px}
+.golden-t{font-family:var(--display);font-size:clamp(15px,2vw,21px);font-style:italic;line-height:1.65;color:var(--ink);max-width:780px}
+.callout{padding:44px 52px;background:var(--cover);border-left:5px solid var(--amb2);position:relative;overflow:hidden}
+.callout::after{content:'"';font-family:var(--display);font-size:260px;font-weight:700;font-style:italic;color:var(--amb2);opacity:0.03;position:absolute;right:-10px;bottom:-60px;line-height:1;pointer-events:none}
+.callout-label{font-family:var(--mono);font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--amb2);margin-bottom:12px}
+.callout-text{font-family:var(--display);font-size:clamp(16px,2.2vw,23px);font-style:italic;line-height:1.65;color:rgba(253,248,240,0.88);max-width:700px;position:relative;z-index:1}
+.callout-attr{font-family:var(--mono);font-size:8.5px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(253,248,240,0.22);margin-top:14px}
+.epigraph{margin:44px 0;padding:34px 44px 34px 56px;background:var(--page2);border-left:4px double var(--amb2);position:relative;overflow:hidden}
+.epigraph::before{content:'\201C';font-family:var(--display);font-size:140px;line-height:1;color:var(--amb2);opacity:0.07;position:absolute;top:-8px;left:10px;pointer-events:none}
+.epigraph-text{font-family:var(--display);font-size:clamp(14px,1.8vw,19px);font-style:italic;line-height:1.7;color:var(--ink2);position:relative;z-index:1}
+.epigraph-attr{font-family:var(--mono);font-size:8.5px;letter-spacing:2px;text-transform:uppercase;color:var(--ink5);margin-top:12px}
+/* shared reveal */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity 0.65s ease,transform 0.65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:0.08s}.d2{transition-delay:0.18s}.d3{transition-delay:0.28s}.d4{transition-delay:0.38s}
+
+/* shared footer */
+.footer{background:var(--cover);padding:52px 64px 36px;position:relative}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--amb2),transparent)}
+.footer-grid{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:36px}
+.f-brand-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.f-brand-name{font-family:var(--display);font-size:28px;font-weight:700;color:var(--page);letter-spacing:-0.5px}
+.f-sub{font-family:var(--mono);font-size:7.5px;letter-spacing:2px;text-transform:uppercase;color:rgba(253,248,240,0.18);line-height:1.8}
+.f-col-head{font-family:var(--mono);font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(253,248,240,0.18);margin-bottom:12px}
+.f-links{display:flex;flex-direction:column;gap:9px}
+.f-links a{font-family:var(--mono);font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(253,248,240,0.22);text-decoration:none;transition:color 0.2s}
+.f-links a:hover{color:var(--amb3)}
+.f-copy{max-width:1120px;margin:0 auto;padding-top:18px;border-top:1px solid rgba(253,248,240,0.05);font-family:var(--mono);font-size:7.5px;color:rgba(253,248,240,0.14);letter-spacing:1px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+/* ═══════════════════════════════════════════
+   PAGE 1 — THE PLATFORM FOR MODERN LIFE
+   Tone: Human. Emotional. Literary. Warm.
+═══════════════════════════════════════════ */
+#page-consumer{background:var(--page);color:var(--ink)}
+
+/* Hero — full-viewport editorial split */
+.p1-hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 48px 80px;position:relative;overflow:hidden;background:var(--page)}
+.p1-hero-ruled{position:absolute;inset:0;pointer-events:none;background-image:repeating-linear-gradient(0deg,transparent,transparent 47px,rgba(140,90,10,0.02) 47px,rgba(140,90,10,0.02) 48px)}
+.p1-hero-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 20% 80%,rgba(140,90,10,0.07) 0%,transparent 55%),radial-gradient(ellipse 50% 40% at 80% 20%,rgba(158,40,69,0.05) 0%,transparent 55%)}
+/* left rainbow spine */
+.p1-spine{position:absolute;left:0;top:0;bottom:0;width:6px;display:flex;flex-direction:column}
+.p1-spine-seg{flex:1}
+/* right ghost spine */
+.p1-spine-r{position:absolute;right:0;top:0;bottom:0;width:4px;opacity:0.2;background:linear-gradient(to bottom,var(--for2),var(--teal),var(--indigo2))}
+.p1-hero-inner{position:relative;z-index:2;max-width:820px}
+.p1-eyebrow{font-family:var(--mono);font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--amb);margin-bottom:20px;opacity:0.8;animation:rise 1s ease both}
+/* animated bookshelf */
+.p1-shelf{display:flex;align-items:flex-end;gap:5px;justify-content:center;margin-bottom:28px;animation:rise 1s 0.06s ease both}
+.p1-book{display:flex;flex-direction:column;align-items:center;cursor:default}
+.p1-book-spine{border-radius:2px 2px 0 0;position:relative;transition:transform 0.3s,box-shadow 0.3s}
+.p1-book-spine::after{content:'';position:absolute;top:4px;bottom:4px;left:2px;width:2px;background:rgba(0,0,0,0.06);border-radius:1px}
+.p1-book:hover .p1-book-spine{transform:translateY(-10px);box-shadow:0 14px 28px rgba(0,0,0,0.15)}
+.p1-book-num{font-family:var(--mono);font-size:6.5px;letter-spacing:1px;color:var(--ink5);margin-top:5px}
+/* headline */
+.p1-title{font-family:var(--display);font-size:clamp(36px,7vw,96px);font-weight:700;color:var(--ink);line-height:0.9;letter-spacing:-4px;margin-bottom:10px;animation:rise 1s 0.12s ease both}
+.p1-title em{font-style:italic;font-weight:400;color:var(--amb2)}
+.p1-sub{font-family:var(--display);font-size:clamp(16px,2.2vw,22px);font-style:italic;color:var(--ink4);margin:16px auto 32px;max-width:580px;line-height:1.6;animation:rise 1s 0.18s ease both}
+.p1-rule{display:flex;align-items:center;gap:18px;justify-content:center;margin:20px 0;animation:rise 1s 0.22s ease both}
+.p1-rl{flex:1;max-width:80px;height:1px;background:rgba(140,90,10,0.25)}
+.p1-rg{font-family:var(--display);font-size:16px;color:rgba(140,90,10,0.4)}
+.p1-mission{font-family:var(--display);font-size:clamp(14px,1.8vw,19px);font-style:italic;color:var(--ink3);max-width:620px;margin:0 auto 40px;line-height:1.75;padding:20px 28px;border-top:1px solid rgba(140,90,10,0.12);border-bottom:1px solid rgba(140,90,10,0.12);animation:rise 1s 0.28s ease both}
+.p1-cta-row{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;animation:rise 1s 0.36s ease both}
+.p1-cta{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:9px;letter-spacing:2.5px;text-transform:uppercase;background:var(--ink);border:1px solid var(--ink);color:var(--page);padding:13px 28px;cursor:pointer;transition:all 0.25s;text-decoration:none}
+.p1-cta:hover{background:var(--amb);border-color:var(--amb);transform:translateY(-1px);box-shadow:0 8px 24px rgba(140,90,10,0.2)}
+.p1-cta-ghost{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--page4);color:var(--ink4);padding:13px 22px;cursor:pointer;transition:all 0.25s;text-decoration:none}
+.p1-cta-ghost:hover{border-color:var(--amb);color:var(--amb)}
+.p1-scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;animation:rise 1s 0.5s ease both}
+.p1-scroll span{font-family:var(--mono);font-size:7px;letter-spacing:3px;text-transform:uppercase;color:var(--ink5)}
+.p1-tick{width:1px;height:32px;background:linear-gradient(to bottom,var(--amb2),transparent);animation:tick 2s ease-in-out infinite}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes tick{0%,100%{opacity:0.3}50%{opacity:1}}
+
+/* narrative section */
+.p1-narrative{max-width:720px;margin:0 auto;padding:0 64px}
+.p1-nar-label{font-family:var(--mono);font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--amb);margin-bottom:20px;display:flex;align-items:center;gap:14px}
+.p1-nar-label::before{content:'';display:block;width:22px;height:1px;background:var(--amb)}
+.p1-nar-p{font-family:var(--display);font-size:clamp(17px,2.2vw,22px);line-height:1.8;color:var(--ink2);margin-bottom:24px}
+.p1-nar-p em{font-style:italic;color:var(--burg2)}
+.p1-nar-p strong{font-weight:700;color:var(--ink)}
+
+/* how it works — chapter journey steps */
+.p1-journey{display:flex;flex-direction:column;gap:0;margin:44px 0;border:1px solid var(--page4)}
+.p1-step{display:grid;grid-template-columns:64px 1fr auto;border-bottom:1px solid var(--page4);transition:background 0.2s;position:relative;overflow:hidden}
+.p1-step:last-child{border-bottom:none}
+.p1-step::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;transform:scaleY(0);transition:transform 0.25s}
+.p1-step:hover{background:rgba(140,90,10,0.02)}
+.p1-step:hover::before{transform:scaleY(1)}
+.p1-step-num{padding:28px 0 28px 22px;display:flex;align-items:flex-start}
+.p1-step-n{font-family:var(--display);font-size:32px;font-weight:700;color:var(--page4);line-height:1;transition:color 0.25s}
+.p1-step:hover .p1-step-n{color:var(--page3)}
+.p1-step-body{padding:28px 24px}
+.p1-step-title{font-family:var(--display);font-size:18px;font-weight:700;color:var(--ink);margin-bottom:5px}
+.p1-step-desc{font-size:13.5px;color:var(--ink3);line-height:1.85;max-width:520px}
+.p1-step-right{padding:28px 24px;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;border-left:1px solid var(--page4);min-width:160px;gap:6px}
+.p1-step-tag{font-family:var(--mono);font-size:7.5px;letter-spacing:1.5px;text-transform:uppercase;padding:3px 8px;border:1px solid var(--page4);color:var(--ink5);white-space:nowrap}
+
+/* module cards — the shelf */
+.p1-shelf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:44px 0}
+.p1-mc{border:1px solid var(--page4);background:#fff;overflow:hidden;position:relative;transition:all 0.22s;cursor:default}
+.p1-mc:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,0.09)}
+.p1-mc-spine{position:absolute;left:0;top:0;bottom:0;width:4px}
+.p1-mc-body{padding:20px 18px 18px 22px}
+.p1-mc-lib{font-family:var(--mono);font-size:7px;letter-spacing:2px;text-transform:uppercase;color:var(--ink5);margin-bottom:4px}
+.p1-mc-name{font-family:var(--display);font-size:14px;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:4px}
+.p1-mc-tag{font-family:var(--display);font-size:11px;font-style:italic;color:var(--ink4);line-height:1.4;margin-bottom:10px}
+.p1-mc-price{font-family:var(--mono);font-size:8.5px;letter-spacing:0.5px;color:var(--amb);border-top:1px solid var(--page4);padding-top:9px}
+.p1-mc-price strong{color:var(--amb2)}
+/* library section labels */
+.p1-lib-head{display:flex;align-items:center;gap:16px;margin-bottom:12px;margin-top:32px}
+.p1-lib-stripe{height:3px;width:32px;border-radius:1px}
+.p1-lib-label{font-family:var(--mono);font-size:8.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink4)}
+
+/* persona section */
+.p1-personas{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:44px 0}
+.p1-persona{border:1px solid var(--page4);background:#fff;padding:28px 24px;position:relative;overflow:hidden;transition:all 0.25s}
+.p1-persona:hover{transform:translateY(-3px);box-shadow:0 6px 24px rgba(0,0,0,0.08)}
+.p1-persona::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;transform:scaleX(0);transition:transform 0.25s}
+.p1-persona:hover::before{transform:scaleX(1)}
+.p1-p-age{font-family:var(--mono);font-size:7.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink5);margin-bottom:8px}
+.p1-p-name{font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink);margin-bottom:5px}
+.p1-p-situation{font-family:var(--display);font-size:13px;font-style:italic;color:var(--ink4);margin-bottom:14px;line-height:1.4}
+.p1-p-quote{font-family:var(--display);font-size:14px;font-style:italic;color:var(--ink2);line-height:1.75;border-left:3px solid var(--page4);padding-left:14px;margin-bottom:14px}
+.p1-p-using{font-family:var(--mono);font-size:8px;letter-spacing:1px;color:var(--ink5);line-height:1.7}
+.p1-p-using strong{display:block;font-size:8.5px;text-transform:uppercase;letter-spacing:1.5px;color:var(--amb);margin-bottom:3px}
+.p1-p-price{font-family:var(--display);font-size:22px;font-weight:700;color:var(--ink);letter-spacing:-0.5px;margin-top:12px}
+.p1-p-price-l{font-family:var(--mono);font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink5)}
+
+/* trust signals */
+.p1-trust{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;padding:32px 48px;border-top:1px solid var(--page4);border-bottom:1px solid var(--page4)}
+.p1-trust-item{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink5)}
+.p1-trust-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.p1-trust-sep{width:1px;height:16px;background:var(--page4)}
+
+/* ═══════════════════════════════════════════
+   PAGE 2 — CHAPTERS CONNECT
+   Tone: Institutional. Precise. Network.
+═══════════════════════════════════════════ */
+#page-connect{background:var(--cover);color:var(--page)}
+
+.p2-hero{min-height:100vh;background:var(--cover);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 48px 80px;position:relative;overflow:hidden}
+.p2-ruled{position:absolute;inset:0;pointer-events:none;background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(74,95,168,0.04) 39px,rgba(74,95,168,0.04) 40px)}
+.p2-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 55% at 15% 60%,rgba(74,95,168,0.15) 0%,transparent 55%),radial-gradient(ellipse 40% 45% at 85% 30%,rgba(13,92,99,0.12) 0%,transparent 50%),radial-gradient(ellipse 30% 50% at 50% 100%,rgba(140,90,10,0.08) 0%,transparent 50%)}
+.p2-vignette{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 30%,rgba(4,1,0,0.88) 100%)}
+.p2-spine{position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(to bottom,var(--indigo2),var(--teal2),var(--indigo2))}
+.p2-spine-r{position:absolute;right:0;top:0;bottom:0;width:4px;opacity:0.25;background:linear-gradient(to bottom,var(--teal),var(--indigo2))}
+.p2-hero-inner{position:relative;z-index:2;max-width:800px}
+
+/* connect logo mark */
+.p2-mark{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:28px;animation:rise 1s ease both}
+.p2-mark-icon{width:48px;height:48px;border:1.5px solid rgba(74,95,168,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative}
+.p2-mark-icon::before{content:'';width:20px;height:20px;border:1.5px solid var(--indigo2);border-radius:50%;position:absolute}
+.p2-mark-icon::after{content:'';width:8px;height:8px;background:var(--teal2);border-radius:50%;position:absolute}
+.p2-mark-text{text-align:left}
+.p2-mark-name{font-family:var(--display);font-size:26px;font-weight:700;color:var(--page);letter-spacing:-0.5px;line-height:1}
+.p2-mark-sub{font-family:var(--mono);font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal2);margin-top:3px}
+
+.p2-eyebrow{font-family:var(--mono);font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--teal2);margin-bottom:18px;opacity:0.8;animation:rise 1s 0.06s ease both}
+.p2-title{font-family:var(--display);font-size:clamp(34px,6vw,80px);font-weight:700;color:var(--page);line-height:0.92;letter-spacing:-3px;margin-bottom:10px;animation:rise 1s 0.12s ease both}
+.p2-title em{font-style:italic;color:var(--teal2);font-weight:400}
+.p2-sub{font-family:var(--display);font-size:clamp(15px,2vw,20px);font-style:italic;color:rgba(253,248,240,0.45);max-width:560px;margin:16px auto 36px;line-height:1.65;animation:rise 1s 0.18s ease both}
+
+/* network stat row */
+.p2-stat-row{display:flex;gap:0;border:1px solid rgba(74,95,168,0.2);margin-bottom:36px;animation:rise 1s 0.28s ease both;max-width:700px;margin-left:auto;margin-right:auto}
+.p2-stat{flex:1;padding:18px 14px;text-align:center;border-right:1px solid rgba(74,95,168,0.15)}
+.p2-stat:last-child{border-right:none}
+.p2-stat-n{font-family:var(--display);font-size:28px;font-weight:700;color:var(--teal2);line-height:1;margin-bottom:4px;letter-spacing:-1px}
+.p2-stat-l{font-family:var(--mono);font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(253,248,240,0.22)}
+
+.p2-cta-row{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;animation:rise 1s 0.34s ease both}
+.p2-cta{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;background:var(--indigo2);border:1px solid var(--indigo2);color:var(--page);padding:13px 28px;cursor:pointer;transition:all 0.25s;text-decoration:none}
+.p2-cta:hover{background:var(--teal);border-color:var(--teal);transform:translateY(-1px);box-shadow:0 8px 24px rgba(74,95,168,0.3)}
+.p2-cta-ghost{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;border:1px solid rgba(74,95,168,0.25);color:rgba(253,248,240,0.4);padding:13px 22px;cursor:pointer;transition:all 0.25s;text-decoration:none}
+.p2-cta-ghost:hover{border-color:var(--teal2);color:var(--teal2)}
+
+/* how connect works — the P2P model */
+.p2-model{display:grid;grid-template-columns:1fr auto 1fr;gap:0;margin:44px 0;align-items:stretch;border:1px solid rgba(140,90,10,0.15)}
+.p2-model-side{padding:36px 32px}
+.p2-model-side.consumer-side{background:rgba(253,248,240,0.03);border-right:1px solid rgba(140,90,10,0.1)}
+.p2-model-side.partner-side{background:rgba(74,95,168,0.05)}
+.p2-model-center{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px 16px;border-right:1px solid rgba(140,90,10,0.1);border-left:1px solid rgba(140,90,10,0.1);background:rgba(140,90,10,0.06);min-width:80px}
+.p2-model-arrow{font-size:24px;color:var(--amb2);margin:8px 0}
+.p2-model-label-c{font-family:var(--mono);font-size:7px;letter-spacing:2px;text-transform:uppercase;color:var(--amb2);text-align:center;line-height:1.5}
+.p2-side-label{font-family:var(--mono);font-size:8px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:10px}
+.p2-side-label.c{color:rgba(253,248,240,0.4)}
+.p2-side-label.p{color:var(--teal2)}
+.p2-side-title{font-family:var(--display);font-size:22px;font-weight:700;color:var(--page);margin-bottom:8px;line-height:1.1}
+.p2-side-desc{font-size:13px;color:rgba(253,248,240,0.5);line-height:1.8;margin-bottom:16px}
+.p2-side-items{display:flex;flex-direction:column;gap:8px}
+.p2-side-item{display:flex;align-items:flex-start;gap:10px;font-size:12.5px;color:rgba(253,248,240,0.45);line-height:1.5}
+.p2-side-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:6px}
+.p2-side-dot.c{background:var(--amb2)}
+.p2-side-dot.p{background:var(--teal2)}
+
+/* partner vertical cards */
+.p2-verticals{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:44px 0}
+.p2-vert{border:1px solid rgba(140,90,10,0.12);padding:32px 28px;position:relative;overflow:hidden;transition:all 0.25s;background:rgba(253,248,240,0.02)}
+.p2-vert:hover{background:rgba(74,95,168,0.07);border-color:rgba(74,95,168,0.3);transform:translateY(-3px)}
+.p2-vert::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.p2-vert.v1::before{background:linear-gradient(to right,var(--burg2),transparent)}
+.p2-vert.v2::before{background:linear-gradient(to right,var(--amb2),transparent)}
+.p2-vert.v3::before{background:linear-gradient(to right,var(--for2),transparent)}
+.p2-vert.v4::before{background:linear-gradient(to right,var(--teal2),transparent)}
+.p2-vert-icon{font-size:28px;margin-bottom:14px}
+.p2-vert-label{font-family:var(--mono);font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(253,248,240,0.3);margin-bottom:6px}
+.p2-vert-name{font-family:var(--display);font-size:22px;font-weight:700;color:var(--page);margin-bottom:8px;line-height:1.1}
+.p2-vert-desc{font-size:13px;color:rgba(253,248,240,0.5);line-height:1.8;margin-bottom:16px}
+.p2-vert-deal{display:flex;align-items:baseline;gap:8px;margin-bottom:6px}
+.p2-vert-deal-price{font-family:var(--display);font-size:32px;font-weight:700;color:var(--page);letter-spacing:-1px;line-height:1}
+.p2-vert-deal-note{font-family:var(--mono);font-size:8.5px;letter-spacing:1px;text-transform:uppercase;color:rgba(253,248,240,0.28)}
+.p2-vert-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:12px}
+.p2-vert-tag{font-family:var(--mono);font-size:7.5px;letter-spacing:1.5px;text-transform:uppercase;padding:3px 8px;border:1px solid rgba(140,90,10,0.2);color:rgba(253,248,240,0.3)}
+
+/* portal feature list */
+.p2-features{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:44px 0}
+.p2-feat{border:1px solid rgba(140,90,10,0.1);padding:26px 22px;background:rgba(253,248,240,0.02);transition:all 0.2s}
+.p2-feat:hover{background:rgba(74,95,168,0.06);border-color:rgba(74,95,168,0.2)}
+.p2-feat::before{content:'';display:block;width:20px;height:2px;background:var(--teal2);margin-bottom:14px}
+.p2-feat-name{font-family:var(--display);font-size:16px;font-weight:700;color:var(--page);margin-bottom:7px}
+.p2-feat-desc{font-size:13px;color:rgba(253,248,240,0.45);line-height:1.8}
+
+/* integration / compliance strip */
+.p2-compliance{display:flex;align-items:center;justify-content:center;gap:20px;padding:24px 48px;border-top:1px solid rgba(74,95,168,0.15);border-bottom:1px solid rgba(74,95,168,0.15);flex-wrap:wrap;background:rgba(74,95,168,0.04)}
+.p2-comp-item{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:7.5px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(253,248,240,0.3)}
+.p2-comp-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.p2-comp-sep{width:1px;height:14px;background:rgba(74,95,168,0.2)}
+
+/* pricing */
+.p2-pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:44px 0;align-items:start}
+.p2-pc{border:1px solid rgba(140,90,10,0.12);overflow:hidden;transition:all 0.25s}
+.p2-pc:hover{transform:translateY(-4px);box-shadow:0 10px 36px rgba(0,0,0,0.4)}
+.p2-pc.featured{border-color:var(--teal2);border-width:2px}
+.p2-pc.featured{transform:translateY(-6px)}
+.p2-pc.featured:hover{transform:translateY(-10px)}
+.p2-pc-head{padding:24px 24px 18px;background:rgba(253,248,240,0.04)}
+.p2-pc.featured .p2-pc-head{background:rgba(74,95,168,0.2);border-bottom:1px solid rgba(74,95,168,0.2)}
+.p2-pc-tier{font-family:var(--mono);font-size:7.5px;letter-spacing:2px;text-transform:uppercase;color:rgba(253,248,240,0.3);margin-bottom:5px}
+.p2-pc-name{font-family:var(--display);font-size:20px;font-weight:700;color:var(--page);margin-bottom:4px}
+.p2-pc-tag{font-size:12px;font-style:italic;color:rgba(253,248,240,0.35);line-height:1.4}
+.p2-pc-body{padding:24px}
+.p2-pc-price{font-family:var(--display);font-size:40px;font-weight:700;color:var(--page);line-height:1;letter-spacing:-2px;margin-bottom:4px}
+.p2-pc-period{font-family:var(--mono);font-size:8.5px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(253,248,240,0.3);margin-bottom:18px}
+.p2-pc-items{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:18px}
+.p2-pc-items li{font-size:13px;color:rgba(253,248,240,0.5);display:flex;gap:8px;line-height:1.45;align-items:flex-start}
+.p2-pc-check{color:var(--teal2);font-size:11px;flex-shrink:0;margin-top:1px}
+.p2-pc-btn{display:block;width:100%;padding:11px 16px;font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;text-align:center;cursor:pointer;border:1px solid rgba(74,95,168,0.3);color:rgba(253,248,240,0.5);background:transparent;transition:all 0.2s}
+.p2-pc.featured .p2-pc-btn{background:var(--indigo2);border-color:var(--indigo2);color:var(--page)}
+.p2-pc-btn:hover{border-color:var(--teal2);color:var(--teal2)}
+.p2-pc.featured .p2-pc-btn:hover{background:var(--teal);border-color:var(--teal)}
+
+/* ═══════════════════════════════════════════
+   PAGE 3 — INVESTOR OVERVIEW
+   Tone: Precise. Urgent. Confident. Data-led.
+═══════════════════════════════════════════ */
+#page-investor{background:var(--cover2);color:var(--page)}
+
+.p3-hero{min-height:100vh;background:var(--cover2);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 48px 80px;position:relative;overflow:hidden}
+.p3-ruled{position:absolute;inset:0;pointer-events:none;background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(140,90,10,0.02) 39px,rgba(140,90,10,0.02) 40px)}
+.p3-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 50% at 15% 65%,rgba(122,31,53,0.15) 0%,transparent 55%),radial-gradient(ellipse 40% 45% at 85% 35%,rgba(140,90,10,0.12) 0%,transparent 50%),radial-gradient(ellipse 35% 50% at 50% 100%,rgba(46,84,48,0.1) 0%,transparent 50%)}
+.p3-vignette{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 25%,rgba(4,1,0,0.9) 100%)}
+.p3-spine{position:absolute;left:0;top:0;bottom:0;width:8px;display:flex;flex-direction:column}
+.p3-spine-seg{flex:1}
+.p3-hero-inner{position:relative;z-index:2;max-width:900px}
+.p3-eyebrow{font-family:var(--mono);font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--burg2);margin-bottom:24px;opacity:0.8;animation:rise 1s ease both}
+.p3-shelf{display:flex;align-items:flex-end;gap:4px;justify-content:center;margin-bottom:24px;animation:rise 1s 0.05s ease both}
+.p3-b{border-radius:2px 2px 0 0;position:relative;transition:transform 0.3s}
+.p3-b::after{content:'';position:absolute;top:3px;bottom:3px;left:2px;width:2px;background:rgba(255,255,255,0.06);border-radius:1px}
+.p3-b:hover{transform:translateY(-8px)}
+.p3-title{font-family:var(--display);font-size:clamp(36px,7vw,96px);font-weight:700;color:var(--page);line-height:0.9;letter-spacing:-4px;margin-bottom:8px;animation:rise 1s 0.1s ease both}
+.p3-title em{font-style:italic;font-weight:400;color:var(--amb3)}
+.p3-rule{display:flex;align-items:center;gap:18px;justify-content:center;margin:20px 0;animation:rise 1s 0.16s ease both}
+.p3-rl{flex:1;max-width:80px;height:1px;background:rgba(184,120,24,0.3)}
+.p3-rg{font-family:var(--display);font-size:16px;color:rgba(184,120,24,0.4)}
+.p3-tagline{font-family:var(--display);font-size:clamp(15px,2vw,20px);font-style:italic;color:rgba(253,248,240,0.5);max-width:640px;margin:0 auto 40px;line-height:1.7;padding:20px 28px;border-top:1px solid rgba(140,90,10,0.15);border-bottom:1px solid rgba(140,90,10,0.15);animation:rise 1s 0.22s ease both}
+/* mega stat grid */
+.p3-stat-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:rgba(140,90,10,0.12);border:1px solid rgba(140,90,10,0.12);margin-bottom:40px;max-width:900px;margin-left:auto;margin-right:auto;animation:rise 1s 0.3s ease both}
+.p3-sg{background:rgba(253,248,240,0.02);padding:18px 10px;text-align:center}
+.p3-sg-n{font-family:var(--display);font-size:clamp(18px,2.5vw,32px);font-weight:700;color:var(--amb3);line-height:1;margin-bottom:4px;letter-spacing:-1px}
+.p3-sg-l{font-family:var(--mono);font-size:6.5px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(253,248,240,0.2);line-height:1.4}
+.p3-cta-row{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;animation:rise 1s 0.38s ease both}
+.p3-cta{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;background:var(--burg2);border:1px solid var(--burg2);color:var(--page);padding:13px 28px;cursor:pointer;transition:all 0.25s;text-decoration:none}
+.p3-cta:hover{background:var(--amb);border-color:var(--amb);transform:translateY(-1px);box-shadow:0 8px 24px rgba(158,40,69,0.3)}
+.p3-cta-ghost{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;border:1px solid rgba(158,40,69,0.3);color:rgba(253,248,240,0.35);padding:13px 22px;cursor:pointer;transition:all 0.25s;text-decoration:none}
+.p3-cta-ghost:hover{border-color:var(--burg2);color:var(--burg2)}
+
+/* two-sided network diagram */
+.p3-network{display:grid;grid-template-columns:1fr 120px 1fr;gap:0;margin:44px 0;border:1px solid rgba(140,90,10,0.15)}
+.p3-net-side{padding:36px 28px}
+.p3-net-side.left{border-right:1px solid rgba(140,90,10,0.1);background:rgba(253,248,240,0.02)}
+.p3-net-side.right{background:rgba(74,95,168,0.05)}
+.p3-net-center{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:20px 10px;background:rgba(140,90,10,0.08);border-left:1px solid rgba(140,90,10,0.1);border-right:1px solid rgba(140,90,10,0.1)}
+.p3-net-arrow{font-size:20px;color:var(--amb2)}
+.p3-net-label{font-family:var(--mono);font-size:7px;letter-spacing:2px;text-transform:uppercase;color:var(--amb2);text-align:center;line-height:1.6}
+.p3-net-head{font-family:var(--mono);font-size:8px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+.p3-net-head.c{color:rgba(253,248,240,0.35)}
+.p3-net-head.b{color:var(--teal2)}
+.p3-net-title{font-family:var(--display);font-size:26px;font-weight:700;color:var(--page);margin-bottom:8px;line-height:1.1}
+.p3-net-sub{font-size:13px;color:rgba(253,248,240,0.45);line-height:1.75;margin-bottom:16px}
+.p3-net-arpu{font-family:var(--display);font-size:36px;font-weight:700;letter-spacing:-1.5px;line-height:1;margin-bottom:4px}
+.p3-net-arpu.c{color:var(--amb3)}
+.p3-net-arpu.b{color:var(--teal2)}
+.p3-net-arpu-l{font-family:var(--mono);font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(253,248,240,0.25)}
+.p3-net-items{display:flex;flex-direction:column;gap:7px;margin-top:16px}
+.p3-net-item{font-size:12.5px;color:rgba(253,248,240,0.4);display:flex;gap:8px;line-height:1.4}
+.p3-net-item-dot{width:4px;height:4px;border-radius:50%;flex-shrink:0;margin-top:7px}
+.p3-net-item-dot.c{background:var(--amb2)}
+.p3-net-item-dot.b{background:var(--teal2)}
+
+/* comps */
+.p3-comps{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:44px 0}
+.p3-cmp{border:1px solid rgba(140,90,10,0.12);padding:24px 20px;background:rgba(253,248,240,0.02);transition:all 0.22s;position:relative;overflow:hidden}
+.p3-cmp:hover{background:rgba(140,90,10,0.06);border-color:rgba(140,90,10,0.25);transform:translateY(-2px)}
+.p3-cmp::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--amb2),transparent)}
+.p3-cmp-name{font-family:var(--display);font-size:19px;font-weight:700;color:var(--page);margin-bottom:4px}
+.p3-cmp-val{font-family:var(--display);font-size:26px;font-weight:700;color:var(--amb3);letter-spacing:-1px;line-height:1;margin-bottom:10px}
+.p3-cmp-how{font-size:12.5px;color:rgba(253,248,240,0.42);line-height:1.75;margin-bottom:10px}
+.p3-cmp-rel{font-family:var(--mono);font-size:8px;letter-spacing:1px;color:var(--for3);border-top:1px solid rgba(140,90,10,0.12);padding-top:10px;line-height:1.6}
+.p3-cmp-rel strong{display:block;color:var(--for3);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:2px;font-size:7.5px}
+
+/* ARR table */
+.p3-arr{border:1px solid rgba(140,90,10,0.15);overflow:hidden;margin:44px 0}
+.p3-arr-head{display:grid;grid-template-columns:200px 1fr 1fr 1fr 1fr;background:rgba(17,10,4,0.8);border-bottom:1px solid rgba(140,90,10,0.15)}
+.p3-arr-hc{font-family:var(--mono);font-size:7.5px;letter-spacing:2px;text-transform:uppercase;color:rgba(253,248,240,0.28);padding:12px 16px}
+.p3-arr-row{display:grid;grid-template-columns:200px 1fr 1fr 1fr 1fr;border-bottom:1px solid rgba(140,90,10,0.08);transition:background 0.18s}
+.p3-arr-row:hover{background:rgba(140,90,10,0.04)}
+.p3-arr-row.subtot{background:rgba(253,248,240,0.03);border-top:1px solid rgba(140,90,10,0.15)}
+.p3-arr-row.total{background:rgba(140,90,10,0.1);border-top:2px solid var(--amb2)}
+.p3-arr-c{padding:13px 16px;font-size:12.5px;color:rgba(253,248,240,0.5);line-height:1.35}
+.p3-arr-c.name{font-family:var(--display);font-size:13px;font-weight:700;color:rgba(253,248,240,0.7)}
+.p3-arr-c.mono{font-family:var(--mono);font-size:10.5px}
+.p3-arr-c.green{color:var(--for3)}
+.p3-arr-c.amber{color:var(--amb2)}
+.p3-arr-c.big{font-family:var(--display);font-size:15px;font-weight:700;color:var(--amb3)}
+.p3-arr-row.total .p3-arr-c.name{font-family:var(--display);font-size:15px;color:var(--page)}
+.p3-swatch{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:7px;vertical-align:middle}
+
+/* IPO timeline */
+.p3-timeline{display:flex;align-items:stretch;gap:0;margin:44px 0;border:1px solid rgba(140,90,10,0.15);overflow:hidden}
+.p3-phase{flex:1;padding:28px 22px;border-right:1px solid rgba(140,90,10,0.12);position:relative;overflow:hidden;transition:background 0.2s}
+.p3-phase:last-child{border-right:none}
+.p3-phase:hover{background:rgba(140,90,10,0.04)}
+.p3-phase::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.p3-phase.ph1::before{background:var(--burg2)}
+.p3-phase.ph2::before{background:var(--amb2)}
+.p3-phase.ph3::before{background:var(--for2)}
+.p3-phase.ph4::before{background:var(--teal2)}
+.p3-phase.ph5::before{background:var(--indigo2)}
+.p3-ph-year{font-family:var(--mono);font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(253,248,240,0.25);margin-bottom:6px}
+.p3-ph-title{font-family:var(--display);font-size:15px;font-weight:700;color:var(--page);margin-bottom:8px;line-height:1.2}
+.p3-ph-arr{font-family:var(--display);font-size:24px;font-weight:700;color:var(--amb3);letter-spacing:-1px;line-height:1;margin-bottom:4px}
+.p3-ph-arr-l{font-family:var(--mono);font-size:7px;letter-spacing:1px;text-transform:uppercase;color:rgba(253,248,240,0.2);margin-bottom:12px}
+.p3-ph-items{display:flex;flex-direction:column;gap:6px}
+.p3-ph-item{font-size:11.5px;color:rgba(253,248,240,0.38);line-height:1.45;display:flex;gap:6px}
+.p3-ph-dot{width:4px;height:4px;border-radius:50%;flex-shrink:0;margin-top:7px;background:rgba(140,90,10,0.4)}
+.p3-ph-badge{display:inline-block;font-family:var(--mono);font-size:7px;letter-spacing:1.5px;text-transform:uppercase;padding:2px 8px;margin-top:12px}
+.p3-phase.ph1 .p3-ph-badge{background:var(--burg2);color:var(--page)}
+.p3-phase.ph5 .p3-ph-badge{border:1px solid var(--indigo2);color:var(--indigo2)}
+.p3-phase.ph2 .p3-ph-badge,.p3-phase.ph3 .p3-ph-badge,.p3-phase.ph4 .p3-ph-badge{border:1px solid rgba(140,90,10,0.25);color:var(--amb)}
+
+/* why now */
+.p3-whynow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:44px 0}
+.p3-wn{border:1px solid rgba(140,90,10,0.12);padding:26px 22px;background:rgba(253,248,240,0.02);transition:all 0.22s;position:relative;overflow:hidden}
+.p3-wn:hover{background:rgba(140,90,10,0.05);border-color:rgba(140,90,10,0.22);transform:translateY(-2px)}
+.p3-wn-num{font-family:var(--display);font-size:48px;font-weight:700;color:rgba(253,248,240,0.05);line-height:1;margin-bottom:8px;letter-spacing:-2px;position:absolute;top:12px;right:14px}
+.p3-wn-title{font-family:var(--display);font-size:16px;font-weight:700;color:var(--page);margin-bottom:8px;line-height:1.2;position:relative;z-index:1}
+.p3-wn-desc{font-size:12.5px;color:rgba(253,248,240,0.42);line-height:1.8;position:relative;z-index:1}
+
+/* IP box */
+.p3-ip{border:1.5px solid var(--burg2);padding:36px 40px;background:rgba(122,31,53,0.05);margin:44px 0;position:relative;overflow:hidden}
+.p3-ip::before{content:'IP';position:absolute;top:-1px;right:20px;font-family:var(--mono);font-size:8px;letter-spacing:3px;color:var(--burg2);background:var(--cover2);padding:0 8px;transform:translateY(-50%);text-transform:uppercase}
+.p3-ip::after{content:'';position:absolute;right:-10px;bottom:-40px;font-family:var(--display);font-size:200px;font-weight:700;color:var(--burg2);opacity:0.03;line-height:1;pointer-events:none}
+.p3-ip-label{font-family:var(--mono);font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--burg2);margin-bottom:12px}
+.p3-ip-text{font-family:var(--display);font-size:clamp(14px,1.8vw,18px);font-style:italic;line-height:1.7;color:rgba(253,248,240,0.75);max-width:680px;position:relative;z-index:1}
+.p3-ip-meta{font-family:var(--mono);font-size:8.5px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(253,248,240,0.22);margin-top:16px}
+.p3-ip-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:24px;position:relative;z-index:1}
+.p3-ip-step{display:flex;gap:10px;padding:12px 14px;border:1px solid rgba(158,40,69,0.15);background:rgba(253,248,240,0.02)}
+.p3-ip-n{font-family:var(--mono);font-size:10px;color:var(--burg2);flex-shrink:0}
+.p3-ip-t{font-size:12px;color:rgba(253,248,240,0.4);line-height:1.5}
+.p3-ip-t strong{display:block;font-size:12.5px;color:rgba(253,248,240,0.65);margin-bottom:1px}
+.p3-ip-step.done .p3-ip-n::after{content:' ✓';color:var(--for3)}
+
+@media(max-width:960px){
+  .sw-tabs .sw-tab:nth-child(n){padding:7px 10px;font-size:7.5px}
+  .wrap,.wrap-n{padding:0 24px}
+  .section{padding:64px 0}
+  .p1-hero,.p2-hero,.p3-hero{padding:100px 24px 64px}
+  .p1-shelf-grid,.p3-whynow,.p3-comps{grid-template-columns:1fr 1fr}
+  .p1-personas,.p2-features,.p2-pricing,.p2-verticals{grid-template-columns:1fr}
+  .p2-model,.p3-network{grid-template-columns:1fr}
+  .p2-model-center,.p3-net-center{display:none}
+  .p2-model-side.consumer-side,.p3-net-side.left{border-right:none;border-bottom:1px solid rgba(140,90,10,0.1)}
+  .p3-timeline{flex-direction:column}
+  .p3-phase{border-right:none;border-bottom:1px solid rgba(140,90,10,0.12)}
+  .p3-arr-head,.p3-arr-row{grid-template-columns:160px 1fr 1fr}
+  .p3-arr-hc:nth-child(n+4),.p3-arr-c:nth-child(n+4){display:none}
+  .p3-stat-grid{grid-template-columns:repeat(3,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .h-rule{padding:0 24px}
+  .p3-ip-steps{grid-template-columns:1fr 1fr}
+  .footer{padding:40px 24px}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<!-- ══════════════ SWITCHER ══════════════ -->
+<div class="switcher">
+  <a class="sw-brand" href="#" onclick="showPage('consumer');return false">
+    <svg width="22" height="17" viewBox="0 0 26 20" fill="none" style="flex-shrink:0">
+      <rect x="0"  y="4"  width="4" height="16" rx="1" fill="#9e2845"/>
+      <rect x="5"  y="0"  width="4" height="20" rx="1" fill="#7a1f35"/>
+      <rect x="10" y="3"  width="4" height="17" rx="1" fill="#2e5430"/>
+      <rect x="15" y="1"  width="4" height="19" rx="1" fill="#b87818"/>
+      <rect x="20" y="5"  width="4" height="15" rx="1" fill="#8c5a0a"/>
+    </svg>
+    <span style="font-family:var(--display);font-size:17px;font-weight:700;color:var(--page);letter-spacing:-0.3px">Chapters</span>
+  </a>
+  <div class="sw-tabs">
+    <button class="sw-tab platform active" onclick="showPage('consumer')">The Platform</button>
+    <button class="sw-tab connect" onclick="showPage('connect')">Chapters Connect</button>
+    <button class="sw-tab investor" onclick="showPage('investor')">Investor Overview</button>
+  </div>
+  <div class="sw-right">
+    <div class="sw-badge">Confidential · 2026</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     PAGE 1 — THE PLATFORM FOR MODERN LIFE
+══════════════════════════════════════════════════ -->
+<div id="page-consumer" class="page active">
+
+  <div class="p1-hero">
+    <div class="p1-hero-ruled"></div>
+    <div class="p1-hero-glow"></div>
+    <div class="p1-spine">
+      <div class="p1-spine-seg" style="background:#9e2845"></div>
+      <div class="p1-spine-seg" style="background:#2e5430"></div>
+      <div class="p1-spine-seg" style="background:#b87818"></div>
+      <div class="p1-spine-seg" style="background:#4e7a50"></div>
+      <div class="p1-spine-seg" style="background:#8c5a0a"></div>
+      <div class="p1-spine-seg" style="background:#e8a820"></div>
+      <div class="p1-spine-seg" style="background:#1e3a20"></div>
+      <div class="p1-spine-seg" style="background:#2a3848"></div>
+      <div class="p1-spine-seg" style="background:#0d5c63"></div>
+      <div class="p1-spine-seg" style="background:#1a8a94"></div>
+      <div class="p1-spine-seg" style="background:#2d3a6e"></div>
+      <div class="p1-spine-seg" style="background:#4a5fa8"></div>
+    </div>
+    <div class="p1-spine-r"></div>
+
+    <div class="p1-hero-inner">
+      <div class="p1-eyebrow">The Platform for Modern Life</div>
+
+      <!-- Bookshelf -->
+      <div class="p1-shelf">
+        <div class="p1-book"><div class="p1-book-spine" style="width:16px;height:52px;background:#9e2845"></div><div class="p1-book-num">01</div></div>
+        <div class="p1-book"><div class="p1-book-spine" style="width:16px;height:66px;background:#2e5430"></div><div class="p1-book-num">02</div></div>
+        <div class="p1-book"><div class="p1-book-spine" style="width:20px;height:80px;background:#b87818"></div><div class="p1-book-num">03</div></div>
+        <div class="p1-book"><div class="p1-book-spine" style="width:16px;height:58px;background:#4e7a50"></div><div class="p1-book-num">04</div></div>
+        <div class="p1-book"><div class="p1-book-spine" style="width:16px;height:68px;background:#8c5a0a"></div><div class="p1-book-num">05</div></div>
+        <div class="p1-book"><div class="p1-book-spine" style="width:16px;height:74px;background:#e8a820"></div><div class="p1-book-num">06</div></div>
+        <div class="p1-book"><div class="p1-book-spine" style="width:16px;height:62px;background:#1e3a20"></div><div class="p1-book-num">07</div></div>
+        <div class="p1-book"><div class="p1-book-spine" style="width:16px;height:48px;background:#2a3848"></div><div class="p1-book-num">08</div></div>
+        <div style="width:10px"></div>
+        <div class="p1-book"><div class="p1-book-spine" style="width:16px;height:44px;background:#0d5c63"></div><div class="p1-book-num">S1</div></div>
+        <div class="p1-book"><div class="p1-book-spine" style="width:16px;height:54px;background:#1a8a94"></div><div class="p1-book-num">S2</div></div>
+        <div class="p1-book"><div class="p1-book-spine" style="width:16px;height:60px;background:#2d3a6e"></div><div class="p1-book-num">S3</div></div>
+        <div class="p1-book"><div class="p1-book-spine" style="width:16px;height:50px;background:#4a5fa8;opacity:0.7"></div><div class="p1-book-num">S4</div></div>
+      </div>
+
+      <h1 class="p1-title">Your life has<br><em>chapters.</em></h1>
+      <div class="p1-sub">The first platform designed for modern life — and the paths, progressions, and challenges of navigating it without a guide.</div>
+      <div class="p1-rule"><div class="p1-rl"></div><div class="p1-rg">❦</div><div class="p1-rl"></div></div>
+      <div class="p1-mission">"Nobody hands you a manual when the big moments arrive. Nobody explains what to do when you get engaged, combine finances, have children, change careers, or start over. You figure it out — or you don't. Chapters is the platform that was supposed to exist."</div>
+      <div class="p1-cta-row">
+        <a class="p1-cta" href="#">Open Your First Chapter →</a>
+        <a class="p1-cta-ghost" href="#">See all 22 modules</a>
+      </div>
+    </div>
+    <div class="p1-scroll"><span>Your chapters begin here</span><div class="p1-tick"></div></div>
+  </div>
+
+  <!-- NARRATIVE -->
+  <div class="section bg2">
+    <div class="p1-narrative reveal">
+      <div class="p1-nar-label">The Problem</div>
+      <p class="p1-nar-p">Life doesn't wait for you to figure it out. The prenuptial conversation happens before you're ready. The first household budget is built on guesswork. The parental leave plan is written at midnight during the third trimester. The career negotiation happens before you've ever practiced one.</p>
+      <p class="p1-nar-p">For every major transition — <em>every chapter of your life</em> — there are decisions to make, systems to build, and a path to navigate. And almost none of us have a guide.</p>
+      <p class="p1-nar-p"><strong>Chapters is that guide.</strong> Not advice. Not a quiz. A platform — one that understands the chapter you're in, gives you the tools to navigate it, and stays with you as your life moves forward.</p>
+    </div>
+  </div>
+
+  <div class="h-rule"><div class="h-rule-l"></div><div class="h-rule-g">❦</div><div class="h-rule-l"></div></div>
+
+  <!-- HOW IT WORKS -->
+  <div class="section">
+    <div class="wrap">
+      <div class="eyebrow reveal">How It Works</div>
+      <div class="s-title reveal d1">You open the chapter<br><em>you're living right now.</em></div>
+      <div class="s-body reveal d2">Chapters doesn't require you to plan your whole life. It meets you where you are — the moment you need it — and gives you the infrastructure to navigate that chapter well.</div>
+
+      <div class="p1-journey reveal">
+        <div class="p1-step" style="--c:var(--burg2)">
+          <div class="p1-step-num"><div class="p1-step-n">01</div></div>
+          <div class="p1-step-body">
+            <div class="p1-step-title">Find your chapter</div>
+            <div class="p1-step-desc">Tell Chapters where you are. Getting engaged. Starting college. Navigating a legal situation. Rebuilding after something hard. There's a chapter for the moment you're in — and the ones ahead of you.</div>
+          </div>
+          <div class="p1-step-right">
+            <div class="p1-step-tag">22 chapters available</div>
+            <div class="p1-step-tag">3 libraries</div>
+          </div>
+        </div>
+        <div class="p1-step">
+          <div class="p1-step-num"><div class="p1-step-n">02</div></div>
+          <div class="p1-step-body">
+            <div class="p1-step-title">Build the infrastructure</div>
+            <div class="p1-step-desc">Each chapter gives you the tools, frameworks, and decision records for navigating that life moment. Not generic advice — working infrastructure built specifically for what you're going through right now.</div>
+          </div>
+          <div class="p1-step-right">
+            <div class="p1-step-tag">Tools that do real work</div>
+            <div class="p1-step-tag">Built for your situation</div>
+          </div>
+        </div>
+        <div class="p1-step">
+          <div class="p1-step-num"><div class="p1-step-n">03</div></div>
+          <div class="p1-step-body">
+            <div class="p1-step-title">Connect to professionals — when you're ready</div>
+            <div class="p1-step-desc">Attorneys, financial advisors, real estate agents, CFPs — available when you need them, connected only when you choose. Every professional on the platform is vetted. You control every introduction.</div>
+          </div>
+          <div class="p1-step-right">
+            <div class="p1-step-tag">Opt-in only</div>
+            <div class="p1-step-tag">You own the connection</div>
+          </div>
+        </div>
+        <div class="p1-step">
+          <div class="p1-step-num"><div class="p1-step-n">04</div></div>
+          <div class="p1-step-body">
+            <div class="p1-step-title">Your shelf grows with your life</div>
+            <div class="p1-step-desc">Every chapter you open adds a book to your shelf. The chapters connect — your partner chapter feeds your wealth chapter, your wealth chapter informs your retirement chapter. Your life is one story. Chapters remembers all of it.</div>
+          </div>
+          <div class="p1-step-right">
+            <div class="p1-step-tag">Cross-chapter connections</div>
+            <div class="p1-step-tag">Lifetime platform</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="h-rule"><div class="h-rule-l"></div><div class="h-rule-g">❦</div><div class="h-rule-l"></div></div>
+
+  <!-- THE MODULES -->
+  <div class="section bg2">
+    <div class="wrap">
+      <div class="eyebrow reveal">22 Modules · 3 Libraries</div>
+      <div class="s-title reveal d1">A chapter for<br><em>wherever you are.</em></div>
+
+      <!-- Couples -->
+      <div class="p1-lib-head reveal">
+        <div class="p1-lib-stripe" style="background:linear-gradient(to right,#9e2845,#b87818,#2e5430)"></div>
+        <div class="p1-lib-label">The Couples Library · 8 chapters · $10,000/yr full library</div>
+      </div>
+      <div class="p1-shelf-grid reveal">
+        <div class="p1-mc"><div class="p1-mc-spine" style="background:#9e2845"></div><div class="p1-mc-body"><div class="p1-mc-lib">C-01</div><div class="p1-mc-name">The Prenup Chapter</div><div class="p1-mc-tag">"Protect what you're bringing in."</div><div class="p1-mc-price"><strong>$1,500</strong> setup</div></div></div>
+        <div class="p1-mc"><div class="p1-mc-spine" style="background:#2e5430"></div><div class="p1-mc-body"><div class="p1-mc-lib">C-02</div><div class="p1-mc-name">The Bachelor Chapter</div><div class="p1-mc-tag">"Close out the solo era."</div><div class="p1-mc-price"><strong>$2,000</strong> setup</div></div></div>
+        <div class="p1-mc" style="border-color:rgba(184,120,24,0.4)"><div class="p1-mc-spine" style="background:#b87818;width:5px"></div><div class="p1-mc-body"><div class="p1-mc-lib">C-03 · ★ Hero</div><div class="p1-mc-name">The Wedding Chapter</div><div class="p1-mc-tag">"Everything. One place."</div><div class="p1-mc-price"><strong>$5,000</strong> setup</div></div></div>
+        <div class="p1-mc"><div class="p1-mc-spine" style="background:#4e7a50"></div><div class="p1-mc-body"><div class="p1-mc-lib">C-04</div><div class="p1-mc-name">The Moving In Chapter</div><div class="p1-mc-tag">"Combining lives."</div><div class="p1-mc-price"><strong>$2,500</strong> setup</div></div></div>
+        <div class="p1-mc"><div class="p1-mc-spine" style="background:#8c5a0a"></div><div class="p1-mc-body"><div class="p1-mc-lib">C-05</div><div class="p1-mc-name">The Partner Chapter</div><div class="p1-mc-tag">"Any partner. Any configuration."</div><div class="p1-mc-price"><strong>$3,000</strong> setup</div></div></div>
+        <div class="p1-mc"><div class="p1-mc-spine" style="background:#e8a820"></div><div class="p1-mc-body"><div class="p1-mc-lib">C-06</div><div class="p1-mc-name">The Wealth Chapter</div><div class="p1-mc-tag">"Building something that outlasts you."</div><div class="p1-mc-price"><strong>$4,500</strong> setup</div></div></div>
+        <div class="p1-mc"><div class="p1-mc-spine" style="background:#1e3a20"></div><div class="p1-mc-body"><div class="p1-mc-lib">C-07</div><div class="p1-mc-name">The Parent Chapter</div><div class="p1-mc-tag">"Nobody fully prepares you."</div><div class="p1-mc-price"><strong>$4,000</strong> setup</div></div></div>
+        <div class="p1-mc"><div class="p1-mc-spine" style="background:#2a3848"></div><div class="p1-mc-body"><div class="p1-mc-lib">C-08</div><div class="p1-mc-name">The Next Chapter</div><div class="p1-mc-tag">"A beginning, not a failure."</div><div class="p1-mc-price"><strong>$3,500</strong> setup</div></div></div>
+      </div>
+
+      <!-- Solo -->
+      <div class="p1-lib-head reveal">
+        <div class="p1-lib-stripe" style="background:linear-gradient(to right,#0d5c63,#1a8a94,#4a5fa8)"></div>
+        <div class="p1-lib-label">The Solo Library · 8 chapters · $1,200/yr full library</div>
+      </div>
+      <div class="p1-shelf-grid reveal">
+        <div class="p1-mc"><div class="p1-mc-spine" style="background:#0d5c63"></div><div class="p1-mc-body"><div class="p1-mc-lib">S-01</div><div class="p1-mc-name">The College Chapter</div><div class="p1-mc-tag">"Your first real chapter."</div><div class="p1-mc-price"><strong>$99/yr</strong></div></div></div>
+        <div class="p1-mc"><div class="p1-mc-spine" style="background:#1a8a94"></div><div class="p1-mc-body"><div class="p1-mc-lib">S-02</div><div class="p1-mc-name">The Trade School Chapter</div><div class="p1-mc-tag">"A different path. Same ambition."</div><div class="p1-mc-price"><strong>$99/yr</strong></div></div></div>
+        <div class="p1-mc"><div class="p1-mc-spine" style="background:#2d3a6e"></div><div class="p1-mc-body"><div class="p1-mc-lib">S-03</div><div class="p1-mc-name">The Career Chapter</div><div class="p1-mc-tag">"Your professional life, structured."</div><div class="p1-mc-price"><strong>$149/yr</strong></div></div></div>
+        <div class="p1-mc"><div class="p1-mc-spine" style="background:#4a5fa8"></div><div class="p1-mc-body"><div class="p1-mc-lib">S-04</div><div class="p1-mc-name">The Solo Chapter</div><div class="p1-mc-tag">"Living well on your own terms."</div><div class="p1-mc-price"><strong>$149/yr</strong></div></div></div>
+        <div class="p1-mc"><div class="p1-mc-spine" style="background:#8b2252"></div><div class="p1-mc-body"><div class="p1-mc-lib">S-05</div><div class="p1-mc-name">The Health Chapter</div><div class="p1-mc-tag">"Your health record, organized."</div><div class="p1-mc-price"><strong>$199/yr</strong></div></div></div>
+        <div class="p1-mc"><div class="p1-mc-spine" style="background:#6b3410"></div><div class="p1-mc-body"><div class="p1-mc-lib">S-06</div><div class="p1-mc-name">The FI Chapter</div><div class="p1-mc-tag">"FIRE, FI, or just free."</div><div class="p1-mc-price"><strong>$199/yr</strong></div></div></div>
+        <div class="p1-mc"><div class="p1-mc-spine" style="background:#2a4a2a"></div><div class="p1-mc-body"><div class="p1-mc-lib">S-07</div><div class="p1-mc-name">The Retirement Chapter</div><div class="p1-mc-tag">"Everyone underprepares for this."</div><div class="p1-mc-price"><strong>$299/yr</strong></div></div></div>
+        <div class="p1-mc"><div class="p1-mc-spine" style="background:#3d6e3d"></div><div class="p1-mc-body"><div class="p1-mc-lib">S-08</div><div class="p1-mc-name">The Fresh Start Chapter</div><div class="p1-mc-tag">"After the hard thing."</div><div class="p1-mc-price"><strong>$99/yr</strong></div></div></div>
+      </div>
+
+      <!-- Legal -->
+      <div class="p1-lib-head reveal">
+        <div class="p1-lib-stripe" style="background:linear-gradient(to right,#2a3848,#4a5fa8,#2d3a6e)"></div>
+        <div class="p1-lib-label">The Legal Library · 6 chapters · $1,788/yr full library</div>
+      </div>
+      <div class="p1-shelf-grid reveal">
+        <div class="p1-mc"><div class="p1-mc-spine" style="background:#4a5fa8"></div><div class="p1-mc-body"><div class="p1-mc-lib">L-01 · Origin</div><div class="p1-mc-name">Personal Injury Chapter</div><div class="p1-mc-tag">"What to do the moment it happens."</div><div class="p1-mc-price"><strong>$299</strong> one-time</div></div></div>
+        <div class="p1-mc"><div class="p1-mc-spine" style="background:#2d3a6e"></div><div class="p1-mc-body"><div class="p1-mc-lib">L-02</div><div class="p1-mc-name">Tenant Rights Chapter</div><div class="p1-mc-tag">"Know what you're owed."</div><div class="p1-mc-price"><strong>$99/yr</strong></div></div></div>
+        <div class="p1-mc"><div class="p1-mc-spine" style="background:#1e3a20"></div><div class="p1-mc-body"><div class="p1-mc-lib">L-03</div><div class="p1-mc-name">Small Claims Chapter</div><div class="p1-mc-tag">"You have a case. Now what?"</div><div class="p1-mc-price"><strong>$199</strong> one-time</div></div></div>
+        <div class="p1-mc"><div class="p1-mc-spine" style="background:#8c5a0a"></div><div class="p1-mc-body"><div class="p1-mc-lib">L-04</div><div class="p1-mc-name">Estate Basics Chapter</div><div class="p1-mc-tag">"Documents every adult needs."</div><div class="p1-mc-price"><strong>$249/yr</strong></div></div></div>
+        <div class="p1-mc"><div class="p1-mc-spine" style="background:#9e2845"></div><div class="p1-mc-body"><div class="p1-mc-lib">L-05</div><div class="p1-mc-name">Employment Rights Chapter</div><div class="p1-mc-tag">"What you're owed at work."</div><div class="p1-mc-price"><strong>$199/yr</strong></div></div></div>
+        <div class="p1-mc"><div class="p1-mc-spine" style="background:#2a3848"></div><div class="p1-mc-body"><div class="p1-mc-lib">L-06</div><div class="p1-mc-name">Consumer Protection Chapter</div><div class="p1-mc-tag">"Fight back. With a plan."</div><div class="p1-mc-price"><strong>$99/yr</strong></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="h-rule"><div class="h-rule-l"></div><div class="h-rule-g">❦</div><div class="h-rule-l"></div></div>
+
+  <!-- PERSONAS -->
+  <div class="section">
+    <div class="wrap">
+      <div class="eyebrow reveal">Real People. Real Chapters.</div>
+      <div class="s-title reveal d1">Everyone is living<br><em>inside a chapter right now.</em></div>
+
+      <div class="p1-personas reveal">
+        <div class="p1-persona" style="--c:#b87818">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--amb2);transform:scaleX(0);transition:transform 0.25s"></div>
+          <div class="p1-p-age">28 · Boston, MA</div>
+          <div class="p1-p-name">Jamie</div>
+          <div class="p1-p-situation">Just got engaged. Has no idea where to start.</div>
+          <div class="p1-p-quote">"I said yes on Saturday. By Monday I had 47 unread emails from venues I don't remember contacting and no idea what a prenup actually is or if I need one."</div>
+          <div class="p1-p-using"><strong>Currently using</strong>The Prenup Chapter · The Wedding Chapter</div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:12px">
+            <div><div class="p1-p-price">$567<span style="font-size:14px;font-weight:400;color:var(--ink4)">/mo</span></div><div class="p1-p-price-l">Prenup + Wedding setup amortized</div></div>
+            <div style="font-family:var(--mono);font-size:8px;color:var(--amb);letter-spacing:1px">Couples Library</div>
+          </div>
+        </div>
+        <div class="p1-persona">
+          <div class="p1-p-age">19 · First year · State university</div>
+          <div class="p1-p-name">Alex</div>
+          <div class="p1-p-situation">First semester. First credit card. First real budget.</div>
+          <div class="p1-p-quote">"I signed the loan papers but I genuinely have no idea what I agreed to or when I have to start paying. My advisor said 'don't worry about it' which is not actually advice."</div>
+          <div class="p1-p-using"><strong>Currently using</strong>The College Chapter · The Career Chapter · The Solo Chapter</div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:12px">
+            <div><div class="p1-p-price">$33<span style="font-size:14px;font-weight:400;color:var(--ink4)">/mo</span></div><div class="p1-p-price-l">3 Solo modules · Student pricing</div></div>
+            <div style="font-family:var(--mono);font-size:8px;color:var(--teal);letter-spacing:1px">Solo Library</div>
+          </div>
+        </div>
+        <div class="p1-persona">
+          <div class="p1-p-age">41 · Slip-and-fall · Dorchester, MA</div>
+          <div class="p1-p-name">Tom</div>
+          <div class="p1-p-situation">Injured last month. Insurance is stonewalling him.</div>
+          <div class="p1-p-quote">"I fell, I have photos, I have a medical bill, and the property manager has stopped returning my calls. I'm not sure I have a case. I'm not sure what to do. I'm sure I can't afford to find out the wrong way."</div>
+          <div class="p1-p-using"><strong>Currently using</strong>Personal Injury Chapter · Employment Rights Chapter</div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:12px">
+            <div><div class="p1-p-price">$41<span style="font-size:14px;font-weight:400;color:var(--ink4)">/mo</span></div><div class="p1-p-price-l">Legal Library · 2 modules</div></div>
+            <div style="font-family:var(--mono);font-size:8px;color:var(--indigo2);letter-spacing:1px">Legal Library</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRUST -->
+  <div class="p1-trust reveal">
+    <div class="p1-trust-item"><div class="p1-trust-dot" style="background:#28ca41;box-shadow:0 0 5px rgba(40,202,65,0.5)"></div>SOC 2 Type II</div>
+    <div class="p1-trust-sep"></div>
+    <div class="p1-trust-item"><div class="p1-trust-dot" style="background:#e8700a"></div>AWS Infrastructure</div>
+    <div class="p1-trust-sep"></div>
+    <div class="p1-trust-item"><div class="p1-trust-dot" style="background:#28ca41"></div>AES-256 Encrypted</div>
+    <div class="p1-trust-sep"></div>
+    <div class="p1-trust-item"><div class="p1-trust-dot" style="background:#28ca41"></div>GDPR · CCPA Compliant</div>
+    <div class="p1-trust-sep"></div>
+    <div class="p1-trust-item"><div class="p1-trust-dot" style="background:#28ca41"></div>No Ad Networks · No Data Sales</div>
+    <div class="p1-trust-sep"></div>
+    <div class="p1-trust-item"><div class="p1-trust-dot" style="background:#28ca41"></div>99.99% Uptime SLA</div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <div class="f-brand-row">
+          <svg width="20" height="16" viewBox="0 0 26 20" fill="none"><rect x="0" y="4" width="4" height="16" rx="1" fill="#9e2845"/><rect x="5" y="0" width="4" height="20" rx="1" fill="#7a1f35"/><rect x="10" y="3" width="4" height="17" rx="1" fill="#2e5430"/><rect x="15" y="1" width="4" height="19" rx="1" fill="#b87818"/><rect x="20" y="5" width="4" height="15" rx="1" fill="#8c5a0a"/></svg>
+          <span class="f-brand-name">Chapters</span>
+        </div>
+        <div class="f-sub">The Platform for Modern Life<br>chapters.life · 22 modules · 3 libraries</div>
+      </div>
+      <div><div class="f-col-head">Couples Library</div><div class="f-links"><a href="#">Prenup · Bachelor · Wedding</a><a href="#">Moving In · Partner · Wealth</a><a href="#">Parent · Next Chapter</a></div></div>
+      <div><div class="f-col-head">Solo Library</div><div class="f-links"><a href="#">College · Trade School · Career</a><a href="#">Solo · Health · FI</a><a href="#">Retirement · Fresh Start</a></div></div>
+      <div><div class="f-col-head">Legal Library</div><div class="f-links"><a href="#">Personal Injury · Tenant Rights</a><a href="#">Small Claims · Estate</a><a href="#">Employment · Consumer Protection</a></div></div>
+    </div>
+    <div class="f-copy">
+      <span>© 2026 Chapters — The Platform for Modern Life — All Rights Reserved</span>
+      <span style="color:var(--amb2)">chapters.life</span>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     PAGE 2 — CHAPTERS CONNECT
+══════════════════════════════════════════════════ -->
+<div id="page-connect" class="page">
+
+  <div class="p2-hero">
+    <div class="p2-ruled"></div>
+    <div class="p2-glow"></div>
+    <div class="p2-vignette"></div>
+    <div class="p2-spine"></div>
+    <div class="p2-spine-r"></div>
+
+    <div class="p2-hero-inner">
+      <div class="p2-mark">
+        <div class="p2-mark-icon"></div>
+        <div class="p2-mark-text">
+          <div class="p2-mark-name">Chapters Connect</div>
+          <div class="p2-mark-sub">The Professional Partner Network</div>
+        </div>
+      </div>
+
+      <div class="p2-eyebrow">B2B Partner Portal · Institutional Access</div>
+      <h1 class="p2-title">Your clients are<br>already living<br><em>in our platform.</em></h1>
+      <div class="p2-sub">Chapters Connect is the institutional partner network that puts your firm inside the most important financial decisions your clients make — at the exact moment they make them.</div>
+
+      <div class="p2-stat-row">
+        <div class="p2-stat"><div class="p2-stat-n">260M</div><div class="p2-stat-l">US adults on platform</div></div>
+        <div class="p2-stat"><div class="p2-stat-n">$100K</div><div class="p2-stat-l">Target partner ACV</div></div>
+        <div class="p2-stat"><div class="p2-stat-n">4</div><div class="p2-stat-l">Enterprise verticals</div></div>
+        <div class="p2-stat"><div class="p2-stat-n">3yr</div><div class="p2-stat-l">Min contract term</div></div>
+      </div>
+
+      <div class="p2-cta-row">
+        <a class="p2-cta" href="#">Apply to Join Chapters Connect →</a>
+        <a class="p2-cta-ghost" href="#">Download Partner Overview</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE P2P MODEL -->
+  <div class="section bg-d2">
+    <div class="wrap">
+      <div class="eyebrow reveal">How Chapters Connect Works</div>
+      <div class="s-title reveal d1">The platform your clients<br><em>use. The network you join.</em></div>
+      <div class="s-body reveal d2">Chapters Connect is a two-sided network. Consumers navigate their lives on the Platform. Institutions and professionals join Connect — deploying the platform to their clients under their brand, or connecting to the consumer network at the moment of demonstrated need.</div>
+
+      <div class="p2-model reveal">
+        <div class="p2-model-side consumer-side">
+          <div class="p2-side-label c">The Platform — Consumer Side</div>
+          <div class="p2-side-title">Chapters</div>
+          <div class="p2-side-desc">260 million American adults navigating life's biggest chapters. Every one of them is a potential client for a law firm, RIA, CFP, employer, or financial institution. They're already on the platform, already working through the life moments you specialize in — and they don't have your information yet.</div>
+          <div class="p2-side-items">
+            <div class="p2-side-item"><div class="p2-side-dot c"></div>Engaged couples working through prenups and weddings</div>
+            <div class="p2-side-item"><div class="p2-side-dot c"></div>Couples building shared financial infrastructure</div>
+            <div class="p2-side-item"><div class="p2-side-dot c"></div>Adults navigating personal injury and employment disputes</div>
+            <div class="p2-side-item"><div class="p2-side-dot c"></div>Pre-retirees modeling Social Security and estate plans</div>
+            <div class="p2-side-item"><div class="p2-side-dot c"></div>New parents planning for the long term</div>
+          </div>
+        </div>
+        <div class="p2-model-center">
+          <div class="p2-model-arrow">⇄</div>
+          <div class="p2-model-label-c">Chapters<br>Connect<br>Network</div>
+          <div class="p2-model-arrow">⇄</div>
+        </div>
+        <div class="p2-model-side partner-side">
+          <div class="p2-side-label p">Chapters Connect — Institutional Side</div>
+          <div class="p2-side-title">Your Firm</div>
+          <div class="p2-side-desc">Join the network as a white-label deployer, a vetted referral partner, or a co-branding institution. Deploy the platform to your client base under your brand. Receive warm introductions from users at the moment they need your expertise. Build a relationship before they know they need an attorney.</div>
+          <div class="p2-side-items">
+            <div class="p2-side-item"><div class="p2-side-dot p"></div>White-label the platform for your client portal</div>
+            <div class="p2-side-item"><div class="p2-side-dot p"></div>Receive verified, opt-in referrals from engaged users</div>
+            <div class="p2-side-item"><div class="p2-side-dot p"></div>Deploy as an HR employee benefit</div>
+            <div class="p2-side-item"><div class="p2-side-dot p"></div>Co-brand for bank and credit union account holders</div>
+            <div class="p2-side-item"><div class="p2-side-dot p"></div>Integrate with existing client portals via API</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout reveal" style="border-color:var(--teal2)">
+        <div class="callout-label" style="color:var(--teal2)">The Coupa Parallel</div>
+        <div class="callout-text">Coupa built procurement software and sold it to enterprises — who then deployed it to their entire supplier network. Chapters Connect is the same architecture: we build the platform, institutions deploy it to their client base. The institution pays. Their clients get the tool through a relationship they already trust. Distribution at zero marginal cost.</div>
+        <div class="callout-attr">Chapters Connect · Partner Network · 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="h-rule" style="background:var(--cover)"><div class="h-rule-l" style="background:rgba(140,90,10,0.2)"></div><div class="h-rule-g" style="color:rgba(140,90,10,0.3)">❦</div><div class="h-rule-l" style="background:rgba(140,90,10,0.2)"></div></div>
+
+  <!-- FOUR VERTICALS -->
+  <div class="section bg-d">
+    <div class="wrap">
+      <div class="eyebrow reveal">Four Partner Verticals</div>
+      <div class="s-title reveal d1">Four industries.<br><em>One network.</em></div>
+
+      <div class="p2-verticals reveal">
+        <div class="p2-vert v1">
+          <div class="p2-vert-icon">⚖️</div>
+          <div class="p2-vert-label">Vertical 01</div>
+          <div class="p2-vert-name">Am Law 100 · Family &amp; Estate Law</div>
+          <div class="p2-vert-desc">Deploy The Prenup Chapter and The Next Chapter inside your client portal. Every family law and estate client arrives prepared — asset inventory done, state enforceability understood, the partner conversation already navigated. Your billable time is spent on legal strategy, not onboarding. The platform becomes the front door to every engagement.</div>
+          <div class="p2-vert-deal"><div class="p2-vert-deal-price">$100K+</div><div class="p2-vert-deal-note">/ year per firm · 3yr min</div></div>
+          <div class="p2-vert-tags"><div class="p2-vert-tag">White-label deployment</div><div class="p2-vert-tag">Client portal API</div><div class="p2-vert-tag">Referral network access</div></div>
+        </div>
+        <div class="p2-vert v2">
+          <div class="p2-vert-icon">📈</div>
+          <div class="p2-vert-label">Vertical 02</div>
+          <div class="p2-vert-name">Wealth Management · RIAs</div>
+          <div class="p2-vert-desc">Deploy The Wealth Chapter and Partner Chapter as a client engagement benefit. Goal data surfaces financial planning conversations organically. Couples using the platform stay more engaged with their advisor — because the platform connects to every financial decision they're making. AUM stickiness built into the relationship infrastructure.</div>
+          <div class="p2-vert-deal"><div class="p2-vert-deal-price">$100K+</div><div class="p2-vert-deal-note">/ year per firm · AUM-tier available</div></div>
+          <div class="p2-vert-tags"><div class="p2-vert-tag">Client co-planning dashboard</div><div class="p2-vert-tag">Goal-to-planning API</div><div class="p2-vert-tag">AUM engagement tool</div></div>
+        </div>
+        <div class="p2-vert v3">
+          <div class="p2-vert-icon">🏢</div>
+          <div class="p2-vert-label">Vertical 03</div>
+          <div class="p2-vert-name">HR · Employee Benefits Programs</div>
+          <div class="p2-vert-desc">Deploy the full Chapters Platform as a company-sponsored life planning benefit — alongside 401(k), EAP, and health coverage. One subscription covers the employee and their partner. The benefit that addresses the life events that most directly affect performance: financial stress, new household logistics, family planning, legal situations, career transitions.</div>
+          <div class="p2-vert-deal"><div class="p2-vert-deal-price">$250/seat</div><div class="p2-vert-deal-note">/ year · 200-seat min · Broker channel: 30% rev share</div></div>
+          <div class="p2-vert-tags"><div class="p2-vert-tag">Full platform deployment</div><div class="p2-vert-tag">Benefits broker channel</div><div class="p2-vert-tag">SSO integration</div></div>
+        </div>
+        <div class="p2-vert v4">
+          <div class="p2-vert-icon">📋</div>
+          <div class="p2-vert-label">Vertical 04</div>
+          <div class="p2-vert-name">Certified Financial Planners · CFPs</div>
+          <div class="p2-vert-desc">Deploy as a client co-planning tool for your practice. The Wealth Chapter becomes the structured conversation layer between advisor and couple — surfacing goals, documenting decisions, and building the financial history that makes every planning session more productive. 92,000 CFPs in the US. Most of them need exactly this.</div>
+          <div class="p2-vert-deal"><div class="p2-vert-deal-price">$5–25K</div><div class="p2-vert-deal-note">/ year per practice · Per-client seat available</div></div>
+          <div class="p2-vert-tags"><div class="p2-vert-tag">Practice management layer</div><div class="p2-vert-tag">Client history API</div><div class="p2-vert-tag">NAPFA distribution</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="h-rule" style="background:var(--cover)"><div class="h-rule-l" style="background:rgba(140,90,10,0.2)"></div><div class="h-rule-g" style="color:rgba(140,90,10,0.3)">❦</div><div class="h-rule-l" style="background:rgba(140,90,10,0.2)"></div></div>
+
+  <!-- PORTAL FEATURES -->
+  <div class="section bg-d2">
+    <div class="wrap">
+      <div class="eyebrow reveal">Portal Capabilities</div>
+      <div class="s-title reveal d1">What Connect<br><em>gives your firm.</em></div>
+
+      <div class="p2-features reveal">
+        <div class="p2-feat"><div class="p2-feat-name">White-Label Deployment</div><div class="p2-feat-desc">Your brand. Your client portal. Chapters infrastructure running underneath. Clients never leave your ecosystem — they access life planning tools inside the relationship they already trust.</div></div>
+        <div class="p2-feat"><div class="p2-feat-name">Verified Referral Pipeline</div><div class="p2-feat-desc">Opt-in introductions from users at the exact moment they demonstrate need. Not cold leads — warm, documented, high-intent connections from people already working through the life moment you specialize in.</div></div>
+        <div class="p2-feat"><div class="p2-feat-name">Client Data Dashboard</div><div class="p2-feat-desc">Aggregate, anonymized insights into where your client base is in their life planning journey. Understand your book at scale — without accessing any individual client's private data.</div></div>
+        <div class="p2-feat"><div class="p2-feat-name">API Integration</div><div class="p2-feat-desc">Connect Chapters to your existing CRM, client portal, or practice management system. Bidirectional data flow via REST API. SSO via SAML 2.0 or OAuth 2.0. Full documentation provided at onboarding.</div></div>
+        <div class="p2-feat"><div class="p2-feat-name">Compliance Toolkit</div><div class="p2-feat-desc">SOC 2 Type II certification. GDPR and CCPA compliant data processing. HIPAA BAA available for healthcare-adjacent deployments. AES-256 encryption. Full audit logging via AWS CloudTrail.</div></div>
+        <div class="p2-feat"><div class="p2-feat-name">Dedicated Partner Success</div><div class="p2-feat-desc">Named Partner Success Manager for every Connect account. Onboarding support, training for client-facing staff, and quarterly business reviews. 4-hour SLA on all support requests.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPLIANCE STRIP -->
+  <div class="p2-compliance reveal">
+    <div class="p2-comp-item"><div class="p2-comp-dot" style="background:#28ca41;box-shadow:0 0 5px rgba(40,202,65,0.5)"></div>SOC 2 Type II Certified</div>
+    <div class="p2-comp-sep"></div>
+    <div class="p2-comp-item"><div class="p2-comp-dot" style="background:#28ca41"></div>GDPR · CCPA Compliant</div>
+    <div class="p2-comp-sep"></div>
+    <div class="p2-comp-item"><div class="p2-comp-dot" style="background:var(--amb2)"></div>HIPAA BAA Available</div>
+    <div class="p2-comp-sep"></div>
+    <div class="p2-comp-item"><div class="p2-comp-dot" style="background:#e8700a"></div>Hosted on AWS · Multi-AZ</div>
+    <div class="p2-comp-sep"></div>
+    <div class="p2-comp-item"><div class="p2-comp-dot" style="background:#28ca41"></div>AES-256 · AWS KMS</div>
+    <div class="p2-comp-sep"></div>
+    <div class="p2-comp-item"><div class="p2-comp-dot" style="background:#28ca41"></div>99.99% Uptime SLA</div>
+    <div class="p2-comp-sep"></div>
+    <div class="p2-comp-item"><div class="p2-comp-dot" style="background:#28ca41"></div>SAML 2.0 · OAuth 2.0 SSO</div>
+  </div>
+
+  <!-- CONNECT PRICING -->
+  <div class="section bg-d">
+    <div class="wrap">
+      <div class="eyebrow reveal">Connect Pricing</div>
+      <div class="s-title reveal d1">Institutional pricing.<br><em>Enterprise contracts.</em></div>
+
+      <div class="p2-pricing reveal">
+        <div class="p2-pc">
+          <div class="p2-pc-head">
+            <div class="p2-pc-tier">CFP Network</div>
+            <div class="p2-pc-name">Practice Partner</div>
+            <div class="p2-pc-tag">For independent CFPs and small advisory practices</div>
+          </div>
+          <div class="p2-pc-body">
+            <div class="p2-pc-price">$5K</div>
+            <div class="p2-pc-period">/ year per practice</div>
+            <ul class="p2-pc-items">
+              <li><span class="p2-pc-check">✓</span>Wealth + Partner Chapter for client co-planning</li>
+              <li><span class="p2-pc-check">✓</span>Up to 50 client seats</li>
+              <li><span class="p2-pc-check">✓</span>Practice branding on client dashboard</li>
+              <li><span class="p2-pc-check">✓</span>Goal-to-planning data feed</li>
+              <li><span class="p2-pc-check">✓</span>Referral network listing</li>
+            </ul>
+            <button class="p2-pc-btn">Apply as CFP Partner</button>
+          </div>
+        </div>
+        <div class="p2-pc featured">
+          <div class="p2-pc-head">
+            <div style="font-family:var(--mono);font-size:7.5px;letter-spacing:2px;text-transform:uppercase;background:var(--teal2);color:var(--page);display:inline-block;padding:2px 8px;margin-bottom:8px">Most Common Deal</div>
+            <div class="p2-pc-tier">Enterprise</div>
+            <div class="p2-pc-name">Institutional Partner</div>
+            <div class="p2-pc-tag">Am Law 100 firms, RIAs, large advisory practices</div>
+          </div>
+          <div class="p2-pc-body">
+            <div class="p2-pc-price">$100K+</div>
+            <div class="p2-pc-period">/ year · 3-year minimum</div>
+            <ul class="p2-pc-items">
+              <li><span class="p2-pc-check">✓</span>Full white-label deployment</li>
+              <li><span class="p2-pc-check">✓</span>Unlimited client seats</li>
+              <li><span class="p2-pc-check">✓</span>Custom domain + branding</li>
+              <li><span class="p2-pc-check">✓</span>API + CRM integration</li>
+              <li><span class="p2-pc-check">✓</span>Priority referral pipeline</li>
+              <li><span class="p2-pc-check">✓</span>SOC 2 documentation package</li>
+              <li><span class="p2-pc-check">✓</span>Dedicated Partner Success Manager</li>
+              <li><span class="p2-pc-check">✓</span>4-hour support SLA</li>
+            </ul>
+            <button class="p2-pc-btn">Request Enterprise Demo</button>
+          </div>
+        </div>
+        <div class="p2-pc">
+          <div class="p2-pc-head">
+            <div class="p2-pc-tier">HR Benefits</div>
+            <div class="p2-pc-name">Employer Platform</div>
+            <div class="p2-pc-tag">Deployed as an employee wellness benefit</div>
+          </div>
+          <div class="p2-pc-body">
+            <div class="p2-pc-price">$250</div>
+            <div class="p2-pc-period">/ employee / year · 200-seat min</div>
+            <ul class="p2-pc-items">
+              <li><span class="p2-pc-check">✓</span>Full platform for employee + partner</li>
+              <li><span class="p2-pc-check">✓</span>All 22 modules included</li>
+              <li><span class="p2-pc-check">✓</span>SSO via SAML 2.0</li>
+              <li><span class="p2-pc-check">✓</span>HR admin dashboard</li>
+              <li><span class="p2-pc-check">✓</span>Utilization reporting</li>
+              <li><span class="p2-pc-check">✓</span>Benefits broker channel (30% rev share)</li>
+            </ul>
+            <button class="p2-pc-btn">Contact Benefits Team</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer" style="background:rgba(4,2,1,1)">
+    <div class="footer-grid">
+      <div>
+        <div class="f-brand-row">
+          <svg width="20" height="16" viewBox="0 0 26 20" fill="none"><rect x="0" y="4" width="4" height="16" rx="1" fill="#9e2845"/><rect x="5" y="0" width="4" height="20" rx="1" fill="#7a1f35"/><rect x="10" y="3" width="4" height="17" rx="1" fill="#2e5430"/><rect x="15" y="1" width="4" height="19" rx="1" fill="#b87818"/><rect x="20" y="5" width="4" height="15" rx="1" fill="#8c5a0a"/></svg>
+          <span class="f-brand-name">Chapters Connect</span>
+        </div>
+        <div class="f-sub">The Professional Partner Network<br>chapters.life/connect · Institutional Access</div>
+      </div>
+      <div><div class="f-col-head">Partner Types</div><div class="f-links"><a href="#">Am Law 100 Firms</a><a href="#">Wealth Management · RIAs</a><a href="#">HR Benefits Programs</a><a href="#">Certified Financial Planners</a></div></div>
+      <div><div class="f-col-head">Platform</div><div class="f-links"><a href="#">API Documentation</a><a href="#">Security & Compliance</a><a href="#">Partner Success</a><a href="#">Case Studies</a></div></div>
+      <div><div class="f-col-head">Contact</div><div class="f-links"><a href="#">Request Enterprise Demo</a><a href="#">Partner Application</a><a href="#">chapters.life/connect</a></div></div>
+    </div>
+    <div class="f-copy">
+      <span>© 2026 Chapters — Chapters Connect — All Rights Reserved</span>
+      <span style="color:var(--teal2)">chapters.life/connect</span>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     PAGE 3 — INVESTOR OVERVIEW
+══════════════════════════════════════════════════ -->
+<div id="page-investor" class="page">
+
+  <div class="p3-hero">
+    <div class="p3-ruled"></div>
+    <div class="p3-glow"></div>
+    <div class="p3-vignette"></div>
+    <div class="p3-spine">
+      <div class="p3-spine-seg" style="background:#9e2845"></div>
+      <div class="p3-spine-seg" style="background:#2e5430"></div>
+      <div class="p3-spine-seg" style="background:#b87818"></div>
+      <div class="p3-spine-seg" style="background:#4e7a50"></div>
+      <div class="p3-spine-seg" style="background:#8c5a0a"></div>
+      <div class="p3-spine-seg" style="background:#e8a820"></div>
+      <div class="p3-spine-seg" style="background:#1e3a20"></div>
+      <div class="p3-spine-seg" style="background:#2a3848"></div>
+      <div class="p3-spine-seg" style="background:#0d5c63"></div>
+      <div class="p3-spine-seg" style="background:#4a5fa8"></div>
+      <div class="p3-spine-seg" style="background:#9e2845"></div>
+    </div>
+
+    <div class="p3-hero-inner">
+      <div class="p3-eyebrow">Investor Overview · Confidential · March 2026</div>
+
+      <div class="p3-shelf">
+        <div class="p3-b" style="width:12px;height:46px;background:#9e2845"></div>
+        <div class="p3-b" style="width:12px;height:60px;background:#2e5430"></div>
+        <div class="p3-b" style="width:16px;height:74px;background:#b87818"></div>
+        <div class="p3-b" style="width:12px;height:52px;background:#4e7a50"></div>
+        <div class="p3-b" style="width:12px;height:64px;background:#8c5a0a"></div>
+        <div class="p3-b" style="width:12px;height:70px;background:#e8a820"></div>
+        <div class="p3-b" style="width:12px;height:56px;background:#1e3a20"></div>
+        <div class="p3-b" style="width:12px;height:44px;background:#2a3848"></div>
+        <div style="width:8px"></div>
+        <div class="p3-b" style="width:12px;height:40px;background:#0d5c63"></div>
+        <div class="p3-b" style="width:12px;height:50px;background:#1a8a94"></div>
+        <div class="p3-b" style="width:12px;height:56px;background:#4a5fa8"></div>
+        <div class="p3-b" style="width:12px;height:44px;background:#8b2252;opacity:0.7"></div>
+        <div style="width:8px"></div>
+        <div class="p3-b" style="width:12px;height:42px;background:#2d3a6e;opacity:0.6"></div>
+        <div class="p3-b" style="width:16px;height:62px;background:#3d6e3d;opacity:0.7"></div>
+      </div>
+
+      <h1 class="p3-title">The first platform<br>for <em>every adult life.</em></h1>
+      <div class="p3-rule"><div class="p3-rl"></div><div class="p3-rg">❦</div><div class="p3-rl"></div></div>
+      <div class="p3-tagline">"Two-sided network. Three product libraries. 22 modules. $100/month ARPU. $1B ARR path. Consumer pull drives enterprise deals. No category exists yet. First mover owns it."</div>
+
+      <div class="p3-stat-grid">
+        <div class="p3-sg"><div class="p3-sg-n">22</div><div class="p3-sg-l">Modules</div></div>
+        <div class="p3-sg"><div class="p3-sg-n">3</div><div class="p3-sg-l">Libraries</div></div>
+        <div class="p3-sg"><div class="p3-sg-n">$312B</div><div class="p3-sg-l">Combined TAM</div></div>
+        <div class="p3-sg"><div class="p3-sg-n">$100</div><div class="p3-sg-l">Target ARPU/mo</div></div>
+        <div class="p3-sg"><div class="p3-sg-n">$100K</div><div class="p3-sg-l">B2B Target ACV</div></div>
+        <div class="p3-sg"><div class="p3-sg-n">$1B+</div><div class="p3-sg-l">ARR Target Y7</div></div>
+      </div>
+
+      <div class="p3-cta-row">
+        <a class="p3-cta" href="#">Request Full Investment Deck →</a>
+        <a class="p3-cta-ghost" href="#">Schedule Founder Meeting</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- TWO-SIDED NETWORK -->
+  <div class="section bg-d2">
+    <div class="wrap">
+      <div class="eyebrow reveal">The Business Architecture</div>
+      <div class="s-title reveal d1">Two sides.<br><em>One network effect.</em></div>
+      <div class="s-body reveal d2">Chapters is a two-sided platform. The consumer platform acquires users. The Connect network monetizes institutions that serve them. Each side makes the other more valuable. Every consumer acquired is a potential referral for a Connect partner. Every Connect partner sends their client base to the platform.</div>
+
+      <div class="p3-network reveal">
+        <div class="p3-net-side left">
+          <div class="p3-net-head c">The Platform · Consumer</div>
+          <div class="p3-net-title">Chapters</div>
+          <div class="p3-net-sub">260 million US adults. 22 modules across three libraries. $100/month target ARPU. Every adult is navigating at least one chapter right now. Consumer revenue proves the product. Consumer base pulls enterprise deals.</div>
+          <div class="p3-net-arpu c">$100<span style="font-size:16px;font-weight:400;color:rgba(232,168,32,0.5)">/mo avg</span></div>
+          <div class="p3-net-arpu-l">Target consumer ARPU · Across active modules</div>
+          <div class="p3-net-items">
+            <div class="p3-net-item"><div class="p3-net-item-dot c"></div>Couples Library: $10,000/yr full access</div>
+            <div class="p3-net-item"><div class="p3-net-item-dot c"></div>Solo Library: $1,200/yr full access</div>
+            <div class="p3-net-item"><div class="p3-net-item-dot c"></div>Legal Library: $1,788/yr full access</div>
+            <div class="p3-net-item"><div class="p3-net-item-dot c"></div>Standalone modules: $99–$5,000</div>
+          </div>
+        </div>
+        <div class="p3-net-center">
+          <div class="p3-net-arrow">→</div>
+          <div class="p3-net-label" style="color:var(--amb2)">Pull-through<br>distribution</div>
+          <div class="p3-net-arrow">←</div>
+          <div class="p3-net-label" style="color:var(--teal2);margin-top:8px">Client<br>acquisition</div>
+          <div class="p3-net-arrow">→</div>
+        </div>
+        <div class="p3-net-side right">
+          <div class="p3-net-head b">Chapters Connect · Institutional</div>
+          <div class="p3-net-title">Partner Network</div>
+          <div class="p3-net-sub">Am Law 100 firms, RIAs, HR programs, and CFPs deploying Chapters to their client base. $100K target ACV. 3-year minimum contracts. Consumer users pull institutional deals — firms join because their clients are already on the platform.</div>
+          <div class="p3-net-arpu b">$100K<span style="font-size:14px;font-weight:400;color:rgba(26,138,148,0.5)">/yr avg</span></div>
+          <div class="p3-net-arpu-l">Target institutional ACV · Enterprise contracts</div>
+          <div class="p3-net-items">
+            <div class="p3-net-item"><div class="p3-net-item-dot b"></div>Am Law 100: $100K+ · 3yr min</div>
+            <div class="p3-net-item"><div class="p3-net-item-dot b"></div>RIAs: $100K+ · AUM-tier available</div>
+            <div class="p3-net-item"><div class="p3-net-item-dot b"></div>HR Benefits: $250/seat · 200-seat min</div>
+            <div class="p3-net-item"><div class="p3-net-item-dot b"></div>CFPs: $5–25K/practice</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="h-rule" style="background:var(--cover2)"><div class="h-rule-l" style="background:rgba(140,90,10,0.15)"></div><div class="h-rule-g" style="color:rgba(140,90,10,0.25)">❦</div><div class="h-rule-l" style="background:rgba(140,90,10,0.15)"></div></div>
+
+  <!-- COMPS -->
+  <div class="section bg-d">
+    <div class="wrap">
+      <div class="eyebrow reveal">Comparable Companies · Valuation Context</div>
+      <div class="s-title reveal d1">Six comps.<br><em>One category they all missed.</em></div>
+      <div class="s-body reveal d2">Every company below built a fragment of what Chapters builds in full. The combined valuation of these six companies exceeds $300 billion. Chapters is the platform none of them built — the unified adult lifecycle system that sits above all of them.</div>
+
+      <div class="p3-comps reveal">
+        <div class="p3-cmp"><div class="p3-cmp-name">DocuSign</div><div class="p3-cmp-val">$50B peak</div><div class="p3-cmp-how">Consumer e-signature → law firm standard via pull-through. The exact Chapters PLG-to-enterprise model. Individual users adopted it; firms followed because their clients already had accounts.</div><div class="p3-cmp-rel"><strong>Chapters parallel</strong>Legal Library → Am Law 100 pull-through. Consumer drives institutional adoption.</div></div>
+        <div class="p3-cmp"><div class="p3-cmp-name">Coupa</div><div class="p3-cmp-val">$8B acquired</div><div class="p3-cmp-how">Procurement SaaS → enterprise supplier network. $100K+ ACV. 3-year contracts. Institutional deployer distributes to their entire network. Zero marginal CAC after the enterprise deal closes.</div><div class="p3-cmp-rel"><strong>Chapters parallel</strong>Chapters Connect · Am Law 100 · RIA white-label. Same architecture, different domain.</div></div>
+        <div class="p3-cmp"><div class="p3-cmp-name">Calm</div><div class="p3-cmp-val">$2B valuation</div><div class="p3-cmp-how">Consumer wellness at $70/yr → HR benefit at $15–20/seat. Same product, two buyers, 100x contract size. The exact playbook Chapters runs with the Solo Library as the consumer wedge.</div><div class="p3-cmp-rel"><strong>Chapters parallel</strong>Solo Library consumer → HR benefits channel. $250/seat × 1,000 employers.</div></div>
+        <div class="p3-cmp"><div class="p3-cmp-name">LegalZoom</div><div class="p3-cmp-val">$7B IPO</div><div class="p3-cmp-how">Consumer legal documents at $600M ARR. But LegalZoom generates documents — it doesn't guide. The Legal Library is the platform LegalZoom never built: preparation, navigation, professional connection. Same TAM, fundamentally better product.</div><div class="p3-cmp-rel"><strong>Chapters parallel</strong>Legal Library · 6 modules · Guide not document generator.</div></div>
+        <div class="p3-cmp"><div class="p3-cmp-name">Notion</div><div class="p3-cmp-val">$10B valuation</div><div class="p3-cmp-how">Personal productivity → team workspace → enterprise default. PLG at consumer level pulled enterprise adoption without a sales force. Chapters follows the identical curve — indispensable personally, inevitable institutionally.</div><div class="p3-cmp-rel"><strong>Chapters parallel</strong>Consumer platform → institutional standard via network effects.</div></div>
+        <div class="p3-cmp"><div class="p3-cmp-name">Intuit</div><div class="p3-cmp-val">$170B market cap</div><div class="p3-cmp-how">Financial tools ecosystem: TurboTax, Mint, QuickBooks, Credit Karma. $15B+ ARR covering the financial life of virtually every American adult. Chapters is the layer above Intuit — the life event infrastructure that connects every financial decision to its human context.</div><div class="p3-cmp-rel"><strong>Chapters parallel</strong>The Intuit of life planning. $100/mo ARPU across 260M adults.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="h-rule" style="background:var(--cover)"><div class="h-rule-l" style="background:rgba(140,90,10,0.15)"></div><div class="h-rule-g" style="color:rgba(140,90,10,0.25)">❦</div><div class="h-rule-l" style="background:rgba(140,90,10,0.15)"></div></div>
+
+  <!-- ARR TABLE -->
+  <div class="section bg-d2">
+    <div class="wrap">
+      <div class="eyebrow reveal">ARR Waterfall · Path to $1B</div>
+      <div class="s-title reveal d1">Conservative model.<br><em>Year by year.</em></div>
+
+      <div class="p3-arr reveal">
+        <div class="p3-arr-head">
+          <div class="p3-arr-hc">Revenue Stream</div>
+          <div class="p3-arr-hc">Year 1</div>
+          <div class="p3-arr-hc">Year 3</div>
+          <div class="p3-arr-hc">Year 5</div>
+          <div class="p3-arr-hc">IPO Ready (Y7+)</div>
+        </div>
+
+        <div class="p3-arr-row"><div class="p3-arr-c name"><span class="p3-swatch" style="background:#9e2845"></span>Couples Consumer</div><div class="p3-arr-c mono">$50K</div><div class="p3-arr-c mono">$2M</div><div class="p3-arr-c green">$10M</div><div class="p3-arr-c amber">$50M</div></div>
+        <div class="p3-arr-row"><div class="p3-arr-c name"><span class="p3-swatch" style="background:#b87818"></span>Am Law 100 White-Label</div><div class="p3-arr-c mono">—</div><div class="p3-arr-c mono">$1M</div><div class="p3-arr-c green">$5M</div><div class="p3-arr-c amber">$35M</div></div>
+        <div class="p3-arr-row"><div class="p3-arr-c name"><span class="p3-swatch" style="background:#e8a820"></span>RIA / Wealth Management</div><div class="p3-arr-c mono">—</div><div class="p3-arr-c mono">$2M</div><div class="p3-arr-c green">$20M</div><div class="p3-arr-c amber">$100M</div></div>
+        <div class="p3-arr-row"><div class="p3-arr-c name"><span class="p3-swatch" style="background:#2e5430"></span>HR Benefits Channel</div><div class="p3-arr-c mono">—</div><div class="p3-arr-c mono">$5M</div><div class="p3-arr-c green">$40M</div><div class="p3-arr-c amber">$250M</div></div>
+        <div class="p3-arr-row subtot"><div class="p3-arr-c name">Couples Library</div><div class="p3-arr-c mono">~$50K</div><div class="p3-arr-c mono">~$10M</div><div class="p3-arr-c green">~$75M</div><div class="p3-arr-c amber">~$435M</div></div>
+        <div class="p3-arr-row"><div class="p3-arr-c name"><span class="p3-swatch" style="background:#0d5c63"></span>Solo Consumer + B2B</div><div class="p3-arr-c mono">—</div><div class="p3-arr-c mono">$750K</div><div class="p3-arr-c green">$10M</div><div class="p3-arr-c amber">$125M</div></div>
+        <div class="p3-arr-row"><div class="p3-arr-c name"><span class="p3-swatch" style="background:#4a5fa8"></span>Legal Library + Law Firm B2B</div><div class="p3-arr-c mono">$25K</div><div class="p3-arr-c mono">$1.5M</div><div class="p3-arr-c green">$13M</div><div class="p3-arr-c amber">$130M</div></div>
+        <div class="p3-arr-row"><div class="p3-arr-c name"><span class="p3-swatch" style="background:#8c5a0a"></span>Referrals · Vendors · Transactions</div><div class="p3-arr-c mono">$35K</div><div class="p3-arr-c mono">$2M</div><div class="p3-arr-c green">$10M</div><div class="p3-arr-c amber">$80M</div></div>
+        <div class="p3-arr-row" style="border-top:2px solid var(--amb2);background:rgba(140,90,10,0.08)">
+          <div class="p3-arr-c name" style="color:var(--page);font-size:15px">Total Platform ARR</div>
+          <div class="p3-arr-c big">~$110K</div>
+          <div class="p3-arr-c big">~$14M</div>
+          <div class="p3-arr-c big">~$108M</div>
+          <div class="p3-arr-c" style="font-family:var(--display);font-size:18px;font-weight:700;color:var(--amb3)">$770M → $1B+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="h-rule" style="background:var(--cover2)"><div class="h-rule-l" style="background:rgba(140,90,10,0.15)"></div><div class="h-rule-g" style="color:rgba(140,90,10,0.25)">❦</div><div class="h-rule-l" style="background:rgba(140,90,10,0.15)"></div></div>
+
+  <!-- IPO TIMELINE -->
+  <div class="section bg-d">
+    <div class="wrap">
+      <div class="eyebrow reveal">IPO Roadmap</div>
+      <div class="s-title reveal d1">Five phases.<br><em>One direction.</em></div>
+
+      <div class="p3-timeline reveal">
+        <div class="p3-phase ph1">
+          <div class="p3-ph-year">2026 · Year 1</div>
+          <div class="p3-ph-title">Prove the Product</div>
+          <div class="p3-ph-arr">$110K</div>
+          <div class="p3-ph-arr-l">ARR target</div>
+          <div class="p3-ph-items">
+            <div class="p3-ph-item"><div class="p3-ph-dot"></div>Ship Prenup + Wedding Chapters</div>
+            <div class="p3-ph-item"><div class="p3-ph-dot"></div>First 5 full-library subscribers</div>
+            <div class="p3-ph-item"><div class="p3-ph-dot"></div>Legal Library beta (founder's own case)</div>
+            <div class="p3-ph-item"><div class="p3-ph-dot"></div>SOC 2 audit initiated</div>
+          </div>
+          <div class="p3-ph-badge">Building Now</div>
+        </div>
+        <div class="p3-phase ph2">
+          <div class="p3-ph-year">2027 · Year 2</div>
+          <div class="p3-ph-title">First Institutional Deals</div>
+          <div class="p3-ph-arr">$3M</div>
+          <div class="p3-ph-arr-l">ARR target</div>
+          <div class="p3-ph-items">
+            <div class="p3-ph-item"><div class="p3-ph-dot"></div>First Am Law 100 contract</div>
+            <div class="p3-ph-item"><div class="p3-ph-dot"></div>First RIA enterprise deal</div>
+            <div class="p3-ph-item"><div class="p3-ph-dot"></div>SOC 2 Type II certified</div>
+            <div class="p3-ph-item"><div class="p3-ph-dot"></div>Seed or Series A raise</div>
+          </div>
+          <div class="p3-ph-badge">Next Phase</div>
+        </div>
+        <div class="p3-phase ph3">
+          <div class="p3-ph-year">2028 · Year 3</div>
+          <div class="p3-ph-title">Scale Enterprise Channel</div>
+          <div class="p3-ph-arr">$14M</div>
+          <div class="p3-ph-arr-l">ARR target</div>
+          <div class="p3-ph-items">
+            <div class="p3-ph-item"><div class="p3-ph-dot"></div>10 Am Law 100 firms live</div>
+            <div class="p3-ph-item"><div class="p3-ph-dot"></div>HR benefits broker channel launched</div>
+            <div class="p3-ph-item"><div class="p3-ph-dot"></div>Series B raise to fund enterprise sales team</div>
+            <div class="p3-ph-item"><div class="p3-ph-dot"></div>Full Solo + Legal Library live</div>
+          </div>
+          <div class="p3-ph-badge">Target</div>
+        </div>
+        <div class="p3-phase ph4">
+          <div class="p3-ph-year">2029–30 · Year 4–5</div>
+          <div class="p3-ph-title">Network Effects Compound</div>
+          <div class="p3-ph-arr">$108M</div>
+          <div class="p3-ph-arr-l">ARR target</div>
+          <div class="p3-ph-items">
+            <div class="p3-ph-item"><div class="p3-ph-dot"></div>50+ institutional partner firms</div>
+            <div class="p3-ph-item"><div class="p3-ph-dot"></div>500+ employer HR deployments</div>
+            <div class="p3-ph-item"><div class="p3-ph-dot"></div>1,000+ CFP network subscribers</div>
+            <div class="p3-ph-item"><div class="p3-ph-dot"></div>Bank co-brand partnerships live</div>
+          </div>
+          <div class="p3-ph-badge">Target</div>
+        </div>
+        <div class="p3-phase ph5">
+          <div class="p3-ph-year">2032–33 · Year 6–7</div>
+          <div class="p3-ph-title">IPO Ready</div>
+          <div class="p3-ph-arr">$770M+</div>
+          <div class="p3-ph-arr-l">ARR target · 10x multiple = $7B+</div>
+          <div class="p3-ph-items">
+            <div class="p3-ph-item"><div class="p3-ph-dot"></div>$1B ARR in sight</div>
+            <div class="p3-ph-item"><div class="p3-ph-dot"></div>200+ enterprise institutional partners</div>
+            <div class="p3-ph-item"><div class="p3-ph-dot"></div>Category-defining brand established</div>
+            <div class="p3-ph-item"><div class="p3-ph-dot"></div>IPO or strategic acquisition</div>
+          </div>
+          <div class="p3-ph-badge">The Goal</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="h-rule" style="background:var(--cover2)"><div class="h-rule-l" style="background:rgba(140,90,10,0.15)"></div><div class="h-rule-g" style="color:rgba(140,90,10,0.25)">❦</div><div class="h-rule-l" style="background:rgba(140,90,10,0.15)"></div></div>
+
+  <!-- WHY NOW -->
+  <div class="section bg-d2">
+    <div class="wrap">
+      <div class="eyebrow reveal">Why Now · The Urgency Case</div>
+      <div class="s-title reveal d1">The category is unbuilt.<br><em>The window closes once.</em></div>
+
+      <div class="p3-whynow reveal">
+        <div class="p3-wn"><div class="p3-wn-num">01</div><div class="p3-wn-title">No direct competitor exists today</div><div class="p3-wn-desc">There is no unified adult lifecycle platform from Intuit, LegalZoom, or any funded startup. The category is completely unbuilt. This is the rarest condition in consumer software — large TAM, zero competition. It will not last more than 3–5 years once this document exists in the world.</div></div>
+        <div class="p3-wn"><div class="p3-wn-num">02</div><div class="p3-wn-title">AI makes this buildable by one person</div><div class="p3-wn-desc">Three years ago this required 50 engineers and $20M. Today: one founder, Cursor, Claude, AWS, and Stripe. First movers can build at a speed incumbents cannot match. The company can be live with paying users before a competitor can staff their first team.</div></div>
+        <div class="p3-wn"><div class="p3-wn-num">03</div><div class="p3-wn-title">72 million millennials are peak user age now</div><div class="p3-wn-desc">Ages 28–43. Getting engaged, buying homes, having children, building wealth — right now. This demographic peak does not repeat. The platform that captures them now retains them for 20 years of compounding revenue across all three libraries.</div></div>
+        <div class="p3-wn"><div class="p3-wn-num">04</div><div class="p3-wn-title">BookTok is a ready distribution channel</div><div class="p3-wn-desc">200 billion views. The Chapters brand speaks the language of that community natively. Founder's fiancée is an active creator in this space. Organic distribution before a single dollar of paid marketing — to the exact demographic living these life moments today.</div></div>
+        <div class="p3-wn"><div class="p3-wn-num">05</div><div class="p3-wn-title">Post-COVID: digital trust for life events is permanent</div><div class="p3-wn-desc">Pre-2020, consumers were skeptical of digital tools for high-stakes decisions. Post-COVID, the same consumers sign mortgages, file taxes, open investment accounts, and attend therapy entirely online. The behavioral barrier to digital life planning has been permanently removed.</div></div>
+        <div class="p3-wn"><div class="p3-wn-num">06</div><div class="p3-wn-title">The founder is the user — right now</div><div class="p3-wn-desc">Thomas O'Leary is personally navigating a prenuptial agreement (October 2026 wedding), planning the wedding, and managing a slip-and-fall legal case simultaneously. He is living inside three of the most important modules at this exact moment. The product authenticity of a founder who is the user in real time is not replicable.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IP -->
+  <div class="section bg-d">
+    <div class="wrap">
+      <div class="eyebrow reveal">IP Protection · Timestamped</div>
+      <div class="p3-ip reveal">
+        <div class="p3-ip-label">IP Assertion — Thomas J. O'Leary — March 22, 2026</div>
+        <div class="p3-ip-text">The three-library platform architecture, the 22-module lifecycle framework, the Chapters brand and bookshelf metaphor, the two-sided Chapters Connect network model, the adult $100/month ARPU thesis, and the legal platform built from personal injury experience — all original to Thomas J. O'Leary as of March 22, 2026. Conceived independently, on personal time, using personal equipment, with no relation to any current or prior employer's business.</div>
+        <div class="p3-ip-meta">Thomas J. O'Leary · Founder · chapters.life · March 22, 2026 · Confidential — NDA required before distribution</div>
+        <div class="p3-ip-steps">
+          <div class="p3-ip-step done"><div class="p3-ip-n">01</div><div class="p3-ip-t"><strong>Self-email timestamp</strong>SHA-256 hash on file · March 22, 2026</div></div>
+          <div class="p3-ip-step done"><div class="p3-ip-n">02</div><div class="p3-ip-t"><strong>Notes app screenshots</strong>Device metadata · March 21–22</div></div>
+          <div class="p3-ip-step done"><div class="p3-ip-n">03</div><div class="p3-ip-t"><strong>Full document written</strong>Complete platform in writing · March 22</div></div>
+          <div class="p3-ip-step"><div class="p3-ip-n">04</div><div class="p3-ip-t"><strong>Employment attorney</strong>Written clearance · Week of March 23</div></div>
+          <div class="p3-ip-step"><div class="p3-ip-n">05</div><div class="p3-ip-t"><strong>Domain registrations</strong>chapters.life + .io + .app + .legal</div></div>
+          <div class="p3-ip-step"><div class="p3-ip-n">06</div><div class="p3-ip-t"><strong>USPTO Provisional Patent</strong>$320 · File this week · 12-month protection</div></div>
+          <div class="p3-ip-step"><div class="p3-ip-n">07</div><div class="p3-ip-t"><strong>Trademark — all 22 module names</strong>Before any public launch</div></div>
+          <div class="p3-ip-step"><div class="p3-ip-n">08</div><div class="p3-ip-t"><strong>Private GitHub repos</strong>This week · Every commit timestamped</div></div>
+          <div class="p3-ip-step"><div class="p3-ip-n">09</div><div class="p3-ip-t"><strong>NDA for all investors</strong>Before this document is shared externally</div></div>
+        </div>
+      </div>
+
+      <div class="golden reveal">
+        <div class="golden-l">The Investment Thesis — One Sentence</div>
+        <div class="golden-t">Chapters is the only company building the unified adult lifecycle platform — the two-sided network that monetizes every American adult at $100/month through consumer subscriptions and $100K/year through institutional partnerships — in a category that doesn't exist yet and won't exist twice.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer" style="background:rgba(4,2,1,1)">
+    <div class="footer-grid">
+      <div>
+        <div class="f-brand-row">
+          <svg width="20" height="16" viewBox="0 0 26 20" fill="none"><rect x="0" y="4" width="4" height="16" rx="1" fill="#9e2845"/><rect x="5" y="0" width="4" height="20" rx="1" fill="#7a1f35"/><rect x="10" y="3" width="4" height="17" rx="1" fill="#2e5430"/><rect x="15" y="1" width="4" height="19" rx="1" fill="#b87818"/><rect x="20" y="5" width="4" height="15" rx="1" fill="#8c5a0a"/></svg>
+          <span class="f-brand-name">Chapters</span>
+        </div>
+        <div class="f-sub">Investor Overview · Confidential<br>chapters.life · March 2026 · NDA Required</div>
+      </div>
+      <div><div class="f-col-head">This Document</div><div class="f-links"><a href="#">Platform Architecture</a><a href="#">Two-Sided Network</a><a href="#">ARR Waterfall</a><a href="#">IPO Roadmap</a><a href="#">IP Protection</a></div></div>
+      <div><div class="f-col-head">The Platform</div><div class="f-links"><a href="#" onclick="showPage('consumer');return false">The Platform →</a><a href="#" onclick="showPage('connect');return false">Chapters Connect →</a></div></div>
+      <div><div class="f-col-head">Founder</div><div style="font-family:var(--mono);font-size:8.5px;color:rgba(253,248,240,0.22);line-height:2">Thomas J. O'Leary<br>Founder · chapters.life<br>(978) 660-8431<br><span style="color:rgba(253,248,240,0.1)">March 22, 2026 · v1.0</span></div></div>
+    </div>
+    <div class="f-copy">
+      <span>© 2026 Thomas J. O'Leary — Chapters — All Rights Reserved — Confidential & Proprietary — Not For Distribution Without Signed NDA</span>
+      <span style="color:var(--amb2)">chapters.life</span>
+    </div>
+  </footer>
+</div>
+
+<script>
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.sw-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  document.querySelector('.sw-tab.' + (id === 'consumer' ? 'platform' : id)).classList.add('active');
+  window.scrollTo(0, 0);
+  // re-trigger reveals for the newly shown page
+  setTimeout(() => {
+    document.querySelectorAll('#page-' + id + ' .reveal').forEach(el => {
+      el.classList.remove('visible');
+    });
+    observeReveals();
+  }, 50);
+}
+
+function observeReveals() {
+  const reveals = document.querySelectorAll('.reveal:not(.visible)');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
+  reveals.forEach(r => io.observe(r));
+}
+
+// progress bar
+window.addEventListener('scroll', () => {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('progress').style.width = (window.scrollY / max * 100) + '%';
+}, { passive: true });
+
+// initial reveals
+observeReveals();
+
+// hover effect on persona cards
+document.querySelectorAll('.p1-persona').forEach(p => {
+  const bar = p.querySelector('div:first-child');
+  if (bar) { p.addEventListener('mouseenter', () => bar.style.transform = 'scaleX(1)'); p.addEventListener('mouseleave', () => bar.style.transform = 'scaleX(0)'); }
+});
+</script>
+</body>
+</html>
